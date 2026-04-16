@@ -2,6 +2,16 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import images from "../../assets/pictures";
+import { useLanguage } from "../../i18n/LanguageContext";
+
+const cardImages = [
+  images.c1,
+  images.c2,
+  images.c3,
+  images.c4,
+  images.c5,
+  images.c6,
+];
 
 type CardSolutionProps = {
   picture: string;
@@ -9,6 +19,7 @@ type CardSolutionProps = {
   content?: string[];
   link?: string;
   index: number;
+  cta: string;
 };
 
 const CardSolution = ({
@@ -17,6 +28,7 @@ const CardSolution = ({
   content,
   link,
   index,
+  cta,
 }: CardSolutionProps) => {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
@@ -160,7 +172,7 @@ const CardSolution = ({
               transition={{ duration: 0.3 }}
             >
               <span className="relative">
-                Parler à un expert
+                {cta}
                 <motion.span
                   className="absolute bottom-0 left-0 h-0.5 bg-blue-600"
                   initial={{ width: 0 }}
@@ -212,6 +224,7 @@ const CardSolution = ({
 };
 
 const OurSolution = () => {
+  const { t } = useLanguage();
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true, amount: 0.5 });
 
@@ -299,7 +312,7 @@ const OurSolution = () => {
               }}
             />
             <span className="text-sm font-semibold text-blue-700">
-              Ce que nous offrons
+              {t.solution.badge}
             </span>
           </motion.div>
 
@@ -320,7 +333,7 @@ const OurSolution = () => {
               }}
               style={{ backgroundSize: "200% 200%" }}
             >
-              Nos solutions
+              {t.solution.title}
             </motion.span>
           </motion.h2>
           <motion.div
@@ -337,67 +350,21 @@ const OurSolution = () => {
             variants={subtitleVariants}
             className="text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto mt-6"
           >
-            Des solutions complètes pour accompagner votre transformation
-            numérique
+            {t.solution.subtitle}
           </motion.p>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-10 max-w-7xl mx-auto">
-          <CardSolution
-            index={0}
-            title="Développement Web/App"
-            picture={images.c1}
-            content={[
-              "Applications métiers sur mesure",
-              "Plateformes web et mobiles scalables",
-              "Intégration API et systèmes existants",
-            ]}
-            link="#"
-          />
-          <CardSolution
-            index={1}
-            title="Architecture réseau"
-            picture={images.c2}
-            content={[
-              "Conception d'architectures cloud hybrides",
-              "Migration vers le cloud",
-              "Optimisation des performances et de la disponibilité",
-            ]}
-            link="#"
-          />
-          <CardSolution
-            index={2}
-            title="Sécurité informatique"
-            picture={images.c3}
-            content={[
-              "Audit et renforcement des systèmes",
-              "Sécurisation des réseaux et des données",
-              "Bonnes pratiques et conformité",
-            ]}
-            link="#"
-          />
-          <CardSolution
-            index={3}
-            title="Intelligence artificielle & agents IA"
-            picture={images.c4}
-            content={[
-              "Agents IA pour automatisation des processus",
-              "Analyse de données et aide à la décision",
-              "IA appliquée aux métiers (support, opérations,...)",
-            ]}
-            link="#"
-          />
-          <CardSolution
-            index={4}
-            title="Formation & montée en compétences"
-            picture={images.c5}
-            content={[
-              "Formations techniques pour équipes IT",
-              "Sensibilisation à la cybersécurité et à l'IA",
-              "Accompagnement à long terme",
-            ]}
-            link="#"
-          />
-          <CardSolution index={5} title="Et bien plus..." picture={images.c6} />
+          {t.solution.cards.map((card, index) => (
+            <CardSolution
+              key={index}
+              index={index}
+              title={card.title}
+              picture={cardImages[index]}
+              content={card.content}
+              link={card.content ? "#" : undefined}
+              cta={t.solution.cta}
+            />
+          ))}
         </div>
       </div>
     </section>

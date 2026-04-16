@@ -1,34 +1,21 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import images from "../../assets/pictures";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-const slides = [
-  {
-    id: 1,
-    title: "Innovation pragmatique",
-    description:
-      "Nous intégrons l'IA et l'automatisation là où elles apportent un réel impact business.",
-    image: images.c1,
-  },
-  {
-    id: 2,
-    title: "Expertise Technique",
-    description:
-      "Des solutions sur mesure pour répondre à vos défis technologiques les plus complexes.",
-    image: images.c2,
-  },
-  {
-    id: 3,
-    title: "Impact Business",
-    description:
-      "Prioriser la valeur métier pour garantir un retour sur investissement rapide.",
-    image: images.c3,
-  },
-];
+const slideImages = [images.c1, images.c2, images.c3];
 
 const Innovation = () => {
+  const { t } = useLanguage();
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(0);
+
+  const slides = t.innovation.slides.map((slide, i) => ({
+    id: i + 1,
+    title: slide.title,
+    description: slide.description,
+    image: slideImages[i],
+  }));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -36,7 +23,7 @@ const Innovation = () => {
       setCurrent((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
     }, 7000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const handleSlideChange = (index: number) => {
     setDirection(index > current ? 1 : -1);
@@ -174,7 +161,7 @@ const Innovation = () => {
                 </span>
                 <div className="h-12 w-0.5 bg-white/30" />
                 <span className="text-sm font-semibold uppercase tracking-wider text-white/60">
-                  {slides[current].id} de {slides.length}
+                  {slides[current].id} {t.innovation.of} {slides.length}
                 </span>
               </motion.div>
 
@@ -238,7 +225,7 @@ const Innovation = () => {
                 className="group relative rounded-full border-2 border-white/40 bg-white/10 px-8 py-3.5 font-semibold backdrop-blur-sm transition-all overflow-hidden"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Parler à un expert
+                  {t.innovation.cta}
                   <motion.span
                     className="inline-block"
                     animate={{ x: [0, 5, 0] }}

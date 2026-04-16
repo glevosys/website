@@ -2,8 +2,10 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import images from "../../assets/pictures";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const AboutUs = () => {
+  const { t } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
@@ -106,7 +108,7 @@ const AboutUs = () => {
                   ease: "easeInOut",
                 }}
               />
-              Glevosys
+              {t.about.badge}
             </motion.span>
           </motion.div>
           <motion.h2
@@ -127,7 +129,7 @@ const AboutUs = () => {
                 ease: [0.22, 1, 0.36, 1],
               }}
             >
-              Qui sommes-nous ?
+              {t.about.heading}
             </motion.span>
           </motion.h2>
           <motion.div
@@ -138,9 +140,9 @@ const AboutUs = () => {
           />
           <motion.div variants={itemVariants}>
             <p className="text-gray-600 text-lg lg:text-xl leading-relaxed text-justify lg:text-left">
-              {`GlevoSys est une entreprise technologique spécialisée dans la transformation numérique des grandes organisations africaines. Inspirée par l'héritage des leaders visionnaires du continent, notre mission est de concevoir, intégrer et sécuriser des solutions numériques à forte valeur ajoutée, allant du cloud et de l'intelligence artificielle au développement d'applications et à la cybersécurité. Nous accompagnons les entreprises dans la modernisation de leurs systèmes, l'optimisation de leurs performances et la montée en compétences de leurs équipes.`
+              {t.about.description
                 .split(". ")
-                .map((sentence, index) => (
+                .map((sentence, index, arr) => (
                   <motion.span
                     key={index}
                     className="inline-block"
@@ -155,7 +157,7 @@ const AboutUs = () => {
                     }}
                   >
                     {sentence}
-                    {index < 2 ? ". " : "."}
+                    {index < arr.length - 1 ? ". " : "."}
                   </motion.span>
                 ))}
             </p>
@@ -173,8 +175,10 @@ const AboutUs = () => {
             animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 1.4, duration: 0.6 }}
           >
-            Nous choisissons des outils en fonction de vos enjeux,{" "}
-            <span className="text-blue-600 font-semibold">pas l'inverse.</span>
+            {t.about.toolsTagline}{" "}
+            <span className="text-blue-600 font-semibold">
+              {t.about.toolsEmphasis}
+            </span>
           </motion.p>
           <div className="relative overflow-hidden w-full">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-white to-transparent z-10" />

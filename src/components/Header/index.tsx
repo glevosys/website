@@ -2,24 +2,21 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import images from "../../assets/pictures";
-
-type NavType = {
-  title: string;
-  path: string;
-  id: string;
-};
-
-const navs: NavType[] = [
-  { title: "Nos solutions", path: "#solution", id: "solution" },
-  { title: "Mission", path: "#mission", id: "mission" },
-  { title: "Domaine", path: "#domaine", id: "domaine" },
-  { title: "Contact", path: "#contact", id: "contact" },
-];
+import { useLanguage } from "../../i18n/LanguageContext";
+import type { Language } from "../../i18n/LanguageContext";
 
 const Header = () => {
+  const { language, setLanguage, t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [activeSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
+
+  const navs = [
+    { title: t.nav.solutions, path: "#solution", id: "solution" },
+    { title: t.nav.mission, path: "#mission", id: "mission" },
+    { title: t.nav.domain, path: "#domaine", id: "domaine" },
+    { title: t.nav.contact, path: "#contact", id: "contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -124,6 +121,8 @@ const Header = () => {
     },
   };
 
+  const langs: Language[] = ["fr", "en"];
+
   return (
     <motion.header
       className={`sticky top-0 z-[100] bg-white transition-all duration-300 ${
@@ -186,6 +185,23 @@ const Header = () => {
             ))}
           </ul>
         </nav>
+        <div className="hidden md:flex items-center gap-1 bg-gray-100 rounded-full p-1">
+          {langs.map((lang) => (
+            <motion.button
+              key={lang}
+              onClick={() => setLanguage(lang)}
+              className={`px-3 py-1 rounded-full text-sm font-bold transition-colors ${
+                language === lang
+                  ? "bg-[#0015CC] text-white"
+                  : "text-gray-500 hover:text-gray-900"
+              }`}
+              whileTap={{ scale: 0.95 }}
+              transition={{ duration: 0.2 }}
+            >
+              {lang.toUpperCase()}
+            </motion.button>
+          ))}
+        </div>
         <motion.button
           onClick={() => setOpen(!open)}
           className="md:hidden relative z-[150] text-3xl text-gray-900"
@@ -283,6 +299,26 @@ const Header = () => {
                   ))}
                 </ul>
                 <motion.div
+                  className="mt-6 flex items-center gap-1 bg-gray-100 rounded-full p-1 w-fit"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                >
+                  {langs.map((lang) => (
+                    <button
+                      key={lang}
+                      onClick={() => setLanguage(lang)}
+                      className={`px-3 py-1 rounded-full text-sm font-bold transition-colors ${
+                        language === lang
+                          ? "bg-[#0015CC] text-white"
+                          : "text-gray-500 hover:text-gray-900"
+                      }`}
+                    >
+                      {lang.toUpperCase()}
+                    </button>
+                  ))}
+                </motion.div>
+                <motion.div
                   className="mt-auto border-t border-gray-100 pt-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -294,7 +330,7 @@ const Header = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.9 }}
                   >
-                    Du code à la croissance.
+                    {t.header.tagline}
                   </motion.p>
                   <motion.p
                     className="text-gray-400 text-sm"
@@ -302,7 +338,7 @@ const Header = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1 }}
                   >
-                    © 2026 Glevosys
+                    {t.header.copyright}
                   </motion.p>
                 </motion.div>
               </div>

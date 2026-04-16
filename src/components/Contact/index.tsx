@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
   const containerVariants = {
@@ -75,6 +77,12 @@ const Contact = () => {
     window.location.href = `mailto:contact@glevosys.com?subject=${subject}&body=${body}`;
   };
 
+  const contactItems = [
+    { icon: "📧", label: t.contact.emailLabel, value: "contact@glevosys.com" },
+    { icon: "📱", label: t.contact.phoneLabel, value: "+237 6XX XXX XXX" },
+    { icon: "📍", label: t.contact.locationLabel, value: "Yaoundé, Cameroun" },
+  ];
+
   return (
     <section
       id="contact"
@@ -139,7 +147,7 @@ const Contact = () => {
                 }}
               />
               <span className="text-sm font-semibold text-blue-700">
-                Contactez-nous
+                {t.contact.badge}
               </span>
             </motion.div>
             <motion.h2
@@ -148,7 +156,7 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              {`Contactez-nous `.split(" ").map((word, index) => (
+              {t.contact.headingStart.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
                   className="inline-block mr-2"
@@ -158,15 +166,10 @@ const Contact = () => {
                   }
                   transition={{ delay: 0.3 + index * 0.05, duration: 0.5 }}
                 >
-                  {word === "maintenant" ? (
-                    <span className="font-bold">{word}</span>
-                  ) : (
-                    word
-                  )}
+                  {word}
                 </motion.span>
               ))}
-              pour discuter de vos besoins en transformation numérique et
-              découvrir comment{" "}
+              {t.contact.headingMiddle}
               <motion.span
                 className="text-[#0015CC] font-semibold inline-block"
                 animate={{
@@ -180,7 +183,7 @@ const Contact = () => {
               >
                 Glevosys
               </motion.span>{" "}
-              peut vous accompagner.
+              {t.contact.headingEnd}
             </motion.h2>
             <motion.div
               className="h-1 w-32 bg-gradient-to-r from-blue-600 via-purple-600 to-transparent rounded-full mx-auto lg:mx-0"
@@ -196,15 +199,7 @@ const Contact = () => {
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ delay: 0.8, duration: 0.6 }}
             >
-              {[
-                { icon: "📧", label: "Email", value: "contact@glevosys.com" },
-                { icon: "📱", label: "Téléphone", value: "+237 6XX XXX XXX" },
-                {
-                  icon: "📍",
-                  label: "Localisation",
-                  value: "Yaoundé, Cameroun",
-                },
-              ].map((item, index) => (
+              {contactItems.map((item, index) => (
                 <motion.div
                   key={index}
                   className="flex items-center gap-3 text-gray-600"
@@ -240,11 +235,12 @@ const Contact = () => {
                 className="flex flex-col gap-2"
               >
                 <label className="text-sm md:text-base font-bold text-gray-900">
-                  Votre nom<span className="text-red-500">*</span>
+                  {t.contact.form.nameLabel}
+                  <span className="text-red-500">*</span>
                 </label>
                 <motion.input
                   type="text"
-                  placeholder="Insérer votre nom complet"
+                  placeholder={t.contact.form.namePlaceholder}
                   name="nom"
                   className="w-full px-5 py-3 rounded-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 text-sm md:text-base"
                   required
@@ -257,12 +253,13 @@ const Contact = () => {
                 className="flex flex-col gap-2"
               >
                 <label className="text-sm md:text-base font-bold text-gray-900">
-                  Votre entreprise<span className="text-red-500">*</span>
+                  {t.contact.form.companyLabel}
+                  <span className="text-red-500">*</span>
                 </label>
                 <motion.input
                   type="text"
                   name="entreprise"
-                  placeholder="Orange, MTN, ..."
+                  placeholder={t.contact.form.companyPlaceholder}
                   className="w-full px-5 py-3 rounded-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 text-sm md:text-base"
                   required
                   whileFocus={{ scale: 1.02 }}
@@ -272,7 +269,8 @@ const Contact = () => {
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col gap-2">
               <label className="text-sm md:text-base font-bold text-gray-900">
-                Votre Email<span className="text-red-500">*</span>
+                {t.contact.form.emailLabel}
+                <span className="text-red-500">*</span>
               </label>
               <motion.input
                 type="email"
@@ -286,7 +284,7 @@ const Contact = () => {
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col gap-2">
               <label className="text-sm md:text-base font-bold text-gray-900">
-                Sur quoi souhaitez-vous travailler en priorité ?
+                {t.contact.form.serviceLabel}
                 <span className="text-red-500">*</span>
               </label>
               <div className="relative group">
@@ -299,11 +297,11 @@ const Contact = () => {
                   transition={{ duration: 0.2 }}
                 >
                   <option value="" className="text-gray-200">
-                    Veillez renseigner le service en particulier
+                    {t.contact.form.servicePlaceholder}
                   </option>
-                  <option value="web">Développement Web/App</option>
-                  <option value="ia">Intelligence artificielle</option>
-                  <option value="secu">Sécurité informatique</option>
+                  <option value="web">{t.contact.form.serviceWeb}</option>
+                  <option value="ia">{t.contact.form.serviceAI}</option>
+                  <option value="secu">{t.contact.form.serviceSecurity}</option>
                 </motion.select>
                 <motion.div
                   className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-white"
@@ -332,13 +330,15 @@ const Contact = () => {
             </motion.div>
             <motion.div variants={itemVariants} className="flex flex-col gap-2">
               <label className="text-sm md:text-base font-bold text-gray-900">
-                Un mot pour nous en dire plus ?{" "}
-                <span className="font-normal text-gray-500">(optionnel)</span>
+                {t.contact.form.messageLabel}{" "}
+                <span className="font-normal text-gray-500">
+                  {t.contact.form.messageOptional}
+                </span>
               </label>
               <motion.textarea
                 rows={4}
                 name="message"
-                placeholder="Décrivez brièvement votre contexte ou votre idée..."
+                placeholder={t.contact.form.messagePlaceholder}
                 className="w-full px-6 py-4 rounded-2xl md:rounded-3xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 resize-none text-sm md:text-base"
                 whileFocus={{ scale: 1.01 }}
                 transition={{ duration: 0.2 }}
@@ -362,7 +362,7 @@ const Contact = () => {
                   className="relative z-10 flex items-center justify-center gap-2"
                   initial={{ x: 0 }}
                 >
-                  Entrer en contact
+                  {t.contact.form.submit}
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{
