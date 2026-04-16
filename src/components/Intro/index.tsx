@@ -158,7 +158,8 @@ const Intro = () => {
             className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
             variants={itemVariants}
           >
-            <motion.div
+            <motion.a
+              href="#contact"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -179,8 +180,9 @@ const Intro = () => {
                   </motion.span>
                 </span>
               </Button>
-            </motion.div>
-            <motion.div
+            </motion.a>
+            <motion.a
+              href="#solution"
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
@@ -191,7 +193,7 @@ const Intro = () => {
               >
                 Découvrir nos solutions
               </Button>
-            </motion.div>
+            </motion.a>
           </motion.div>
           <motion.div
             className="mt-20"

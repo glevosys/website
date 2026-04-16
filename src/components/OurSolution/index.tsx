@@ -154,7 +154,7 @@ const CardSolution = ({
             transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
           >
             <motion.a
-              href={link}
+              href={"#contact"}
               className="inline-flex items-center text-lg font-bold text-gray-900 group/link"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.3 }}

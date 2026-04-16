@@ -52,6 +52,29 @@ const Contact = () => {
     },
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      nom: formData.get("nom"),
+      entreprise: formData.get("entreprise"),
+      email: formData.get("email"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    };
+    const subject = encodeURIComponent(
+      `Nouveau contact de ${data.nom} - Glevosys`,
+    );
+    const body = encodeURIComponent(
+      `Nom: ${data.nom}\n` +
+        `Entreprise: ${data.entreprise}\n` +
+        `Email: ${data.email}\n` +
+        `Service: ${data.service}\n\n` +
+        `Message:\n${data.message}`,
+    );
+    window.location.href = `mailto:contact@glevosys.com?subject=${subject}&body=${body}`;
+  };
+
   return (
     <section
       id="contact"
@@ -206,7 +229,7 @@ const Contact = () => {
             variants={formVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
           >
             <motion.div
               className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6"
@@ -222,6 +245,7 @@ const Contact = () => {
                 <motion.input
                   type="text"
                   placeholder="Insérer votre nom complet"
+                  name="nom"
                   className="w-full px-5 py-3 rounded-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 text-sm md:text-base"
                   required
                   whileFocus={{ scale: 1.02 }}
@@ -237,6 +261,7 @@ const Contact = () => {
                 </label>
                 <motion.input
                   type="text"
+                  name="entreprise"
                   placeholder="Orange, MTN, ..."
                   className="w-full px-5 py-3 rounded-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 text-sm md:text-base"
                   required
@@ -251,6 +276,7 @@ const Contact = () => {
               </label>
               <motion.input
                 type="email"
+                name="email"
                 placeholder="xxxxxxxxx@xxx.xxx"
                 className="w-full px-5 py-3 rounded-full border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 text-sm md:text-base"
                 required
@@ -267,6 +293,7 @@ const Contact = () => {
                 <motion.select
                   className="w-full appearance-none bg-[#4F5ED3] text-white px-6 py-4 rounded-full font-medium cursor-pointer outline-none hover:bg-[#4351BD] transition-colors pr-12 text-sm md:text-base"
                   required
+                  name="service"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   transition={{ duration: 0.2 }}
@@ -310,6 +337,7 @@ const Contact = () => {
               </label>
               <motion.textarea
                 rows={4}
+                name="message"
                 placeholder="Décrivez brièvement votre contexte ou votre idée..."
                 className="w-full px-6 py-4 rounded-2xl md:rounded-3xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all placeholder:text-gray-400 resize-none text-sm md:text-base"
                 whileFocus={{ scale: 1.01 }}
