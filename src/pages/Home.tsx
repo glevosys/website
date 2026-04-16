@@ -1,5 +1,5 @@
 import AboutUs from "../components/AboutUS";
-import Contact from "../components/Conteact";
+import Contact from "../components/Contact";
 import Domain from "../components/Domain";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
