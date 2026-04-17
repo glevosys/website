@@ -2,8 +2,20 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import images from "../../assets/pictures";
+import { useLanguage } from "../../i18n/LanguageContext";
+
+const domainImages = [images.d1, images.d2, images.d3];
+const imagePositions = [
+  "bottom-right",
+  "bottom-full",
+  "bottom-full-tall",
+] as const;
+const bgColors = ["bg-[#E8ECF1]", "bg-[#E8ECF1]", "bg-[#E8ECF1]"];
+const delays = [0.2, 0.4, 0.6];
+const isFullHeights = [false, false, true];
 
 const Domain = () => {
+  const { t } = useLanguage();
   const titleRef = useRef(null);
   const isTitleInView = useInView(titleRef, { once: true, amount: 0.5 });
 
@@ -95,7 +107,7 @@ const Domain = () => {
               }}
             />
             <span className="text-sm font-semibold text-blue-700">
-              Nos expertises
+              {t.domain.badge}
             </span>
           </motion.div>
           <motion.h2
@@ -114,7 +126,7 @@ const Domain = () => {
               }}
               style={{ backgroundSize: "200% 200%" }}
             >
-              Nos domaines d'activité
+              {t.domain.title}
             </motion.span>
           </motion.h2>
           <motion.div
@@ -131,52 +143,40 @@ const Domain = () => {
             variants={subtitleVariants}
             className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto"
           >
-            Une expertise complète pour répondre à tous vos besoins numériques.
+            {t.domain.subtitle}
           </motion.p>
         </motion.div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-7xl mx-auto">
           <div className="lg:col-span-7 flex flex-col gap-6">
             <DomainCard
-              delay={0.2}
-              title="Consulting & Dev/DevSecOps"
-              description="Audit, intégration, migration vers GitHub / Azure / CI-CD."
-              tags={[
-                "Audit Dev/DevSecOps",
-                "Migration Cloud",
-                "Sécurisation CI/CD",
-              ]}
-              image={images.d1}
-              imagePosition="bottom-right"
-              bgColor="bg-[#E8ECF1]"
+              delay={delays[0]}
+              title={t.domain.cards[0].title}
+              description={t.domain.cards[0].description}
+              tags={t.domain.cards[0].tags}
+              image={domainImages[0]}
+              imagePosition={imagePositions[0]}
+              bgColor={bgColors[0]}
             />
             <DomainCard
-              delay={0.4}
-              title="Développement & Intégration"
-              description="Conception d'applications et agents IA internes."
-              tags={[
-                "Outils internes",
-                "Agent ChatGPT",
-                "Copilot personnalisé",
-              ]}
-              image={images.d2}
-              imagePosition="bottom-full"
-              bgColor="bg-[#E8ECF1]"
+              delay={delays[1]}
+              title={t.domain.cards[1].title}
+              description={t.domain.cards[1].description}
+              tags={t.domain.cards[1].tags}
+              image={domainImages[1]}
+              imagePosition={imagePositions[1]}
+              bgColor={bgColors[1]}
             />
           </div>
           <div className="lg:col-span-5">
             <DomainCard
-              delay={0.6}
-              title="Formation & Acculturation IA"
-              description="Formations corporate sur DevOps appliquée au développement."
-              tags={[
-                "Workshops IA + Dev",
-                "Formation équipes",
-                "Coaching technique",
-              ]}
-              image={images.d3}
-              imagePosition="bottom-full-tall"
-              bgColor="bg-[#E8ECF1]"
-              isFullHeight
+              delay={delays[2]}
+              title={t.domain.cards[2].title}
+              description={t.domain.cards[2].description}
+              tags={t.domain.cards[2].tags}
+              image={domainImages[2]}
+              imagePosition={imagePositions[2]}
+              bgColor={bgColors[2]}
+              isFullHeight={isFullHeights[2]}
             />
           </div>
         </div>

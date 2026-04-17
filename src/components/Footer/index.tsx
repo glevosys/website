@@ -1,7 +1,10 @@
 import images from "../../assets/pictures";
-import { Instagram, Linkedin, Twitter } from "lucide-react"; // Optionnel : installe lucide-react
+import { Instagram, Linkedin, Twitter } from "lucide-react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#050B44] py-16 text-white/80">
       <div className="container mx-auto px-6 lg:px-12">
@@ -14,11 +17,10 @@ const Footer = () => {
             />
             <div className="space-y-4">
               <p className="text-lg font-medium text-white/60">
-                Du code à la croissance.
+                {t.footer.tagline}
               </p>
               <p className="max-w-sm leading-relaxed text-white/50">
-                Accompagner les entreprises africaines dans leur transformation
-                numérique par l'intégration de solutions cloud et IA.
+                {t.footer.description}
               </p>
             </div>
             <div className="flex space-x-5 pt-4">
@@ -28,15 +30,11 @@ const Footer = () => {
             </div>
           </div>
           <div className="lg:col-span-4 lg:pl-10">
-            <h4 className="mb-6 text-xl font-semibold text-white">Solutions</h4>
+            <h4 className="mb-6 text-xl font-semibold text-white">
+              {t.footer.solutionsTitle}
+            </h4>
             <ul className="space-y-3">
-              {[
-                "Développement Web & App",
-                "Architecture réseaux & cloud",
-                "Sécurité informatique",
-                "Intelligence artificielle",
-                "Formation",
-              ].map((item) => (
+              {t.footer.solutions.map((item) => (
                 <li
                   key={item}
                   className="cursor-pointer hover:text-white transition-colors"
@@ -47,7 +45,9 @@ const Footer = () => {
             </ul>
           </div>
           <div className="lg:col-span-3">
-            <h4 className="mb-6 text-xl font-semibold text-white">Contact</h4>
+            <h4 className="mb-6 text-xl font-semibold text-white">
+              {t.footer.contactTitle}
+            </h4>
             <ul className="space-y-3">
               <li className="cursor-pointer hover:text-white transition-colors text-white/70">
                 www.glevosys.com

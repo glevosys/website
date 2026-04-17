@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import images from "../../assets/pictures";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Mission = () => {
+  const { t } = useLanguage();
+
   const flags = [
     images.bf,
     images.cm,
@@ -100,7 +103,7 @@ const Mission = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
-                Accompagner
+                {t.mission.line1}
               </motion.span>
               <motion.span
                 className="block text-[#0015CC] bg-gradient-to-r from-[#0015CC] to-[#0033FF] bg-clip-text text-transparent"
@@ -109,7 +112,7 @@ const Mission = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
-                +300 Entreprises africaines
+                {t.mission.line2}
               </motion.span>
               <motion.span
                 className="block mt-2 text-gray-700"
@@ -118,7 +121,7 @@ const Mission = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.6, duration: 0.6 }}
               >
-                dans leur transformation numérique
+                {t.mission.line3}
               </motion.span>
             </h2>
 
@@ -209,7 +212,7 @@ const Mission = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                  Entreprises
+                  {t.mission.companies}
                 </motion.span>
 
                 {/* Decorative elements */}

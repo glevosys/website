@@ -1,7 +1,10 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const Intro = () => {
+  const { t } = useLanguage();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -127,16 +130,16 @@ const Intro = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Du code à la{" "}
+              {t.intro.title1}{" "}
             </motion.span>
             <br className="hidden md:block" />
             <motion.span
-              className="inline-block bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 bg-clip-text text-transparent"
+              className="inline-block bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 bg-clip-text text-transparent pb-4"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              croissance
+              {t.intro.title2}
             </motion.span>
             <motion.div
               className="mx-auto mt-4 h-1 w-32 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"
@@ -149,10 +152,7 @@ const Intro = () => {
             className="mt-6 max-w-2xl text-center text-lg leading-relaxed text-gray-600 md:text-xl"
             variants={itemVariants}
           >
-            Glevosys accompagne les entreprises africaines dans leur
-            transformation numérique par l'intégration des solutions cloud et
-            IA, le développement d'agents logiciels et la montée en compétence
-            des équipes.
+            {t.intro.description}
           </motion.p>
           <motion.div
             className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
@@ -166,7 +166,7 @@ const Intro = () => {
             >
               <Button className="h-14 rounded-full bg-blue-700 px-10 text-lg font-medium hover:bg-blue-800 transition-all shadow-lg shadow-blue-700/30 hover:shadow-xl hover:shadow-blue-700/40 group">
                 <span className="flex items-center gap-2">
-                  Parler à un expert
+                  {t.intro.ctaExpert}
                   <motion.span
                     className="inline-block"
                     animate={{ x: [0, 5, 0] }}
@@ -191,7 +191,7 @@ const Intro = () => {
                 variant="secondary"
                 className="h-14 rounded-full border-gray-200 bg-white px-10 text-lg font-medium text-black hover:bg-gray-50 transition-all shadow-md hover:shadow-lg"
               >
-                Découvrir nos solutions
+                {t.intro.ctaSolutions}
               </Button>
             </motion.a>
           </motion.div>
@@ -211,7 +211,7 @@ const Intro = () => {
               }}
             >
               <span className="text-xs font-medium uppercase tracking-wider">
-                Scroll
+                {t.intro.scroll}
               </span>
               <svg
                 className="w-6 h-6"
