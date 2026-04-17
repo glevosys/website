@@ -4,15 +4,7 @@ import { useRef } from "react";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const domainImages = [images.d1, images.d2, images.d3];
-const imagePositions = [
-  "bottom-right",
-  "bottom-full",
-  "bottom-full-tall",
-] as const;
-const bgColors = ["bg-[#E8ECF1]", "bg-[#E8ECF1]", "bg-[#E8ECF1]"];
-const delays = [0.2, 0.4, 0.6];
-const isFullHeights = [false, false, true];
+const domainImages = [images.d1, images.d2, images.d3, images.c3];
 
 const Domain = () => {
   const { t } = useLanguage();
@@ -97,14 +89,8 @@ const Domain = () => {
           >
             <motion.span
               className="w-2 h-2 bg-blue-600 rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
             <span className="text-sm font-semibold text-blue-700">
               {t.domain.badge}
@@ -119,11 +105,7 @@ const Domain = () => {
               animate={{
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
               }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "linear",
-              }}
+              transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
               style={{ backgroundSize: "200% 200%" }}
             >
               {t.domain.title}
@@ -146,39 +128,19 @@ const Domain = () => {
             {t.domain.subtitle}
           </motion.p>
         </motion.div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-7xl mx-auto">
-          <div className="lg:col-span-7 flex flex-col gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+          {t.domain.cards.map((card, index) => (
             <DomainCard
-              delay={delays[0]}
-              title={t.domain.cards[0].title}
-              description={t.domain.cards[0].description}
-              tags={t.domain.cards[0].tags}
-              image={domainImages[0]}
-              imagePosition={imagePositions[0]}
-              bgColor={bgColors[0]}
+              key={index}
+              delay={0.1 + index * 0.15}
+              title={card.title}
+              description={card.description}
+              tags={card.tags}
+              image={domainImages[index]}
+              bgColor="bg-[#E8ECF1]"
             />
-            <DomainCard
-              delay={delays[1]}
-              title={t.domain.cards[1].title}
-              description={t.domain.cards[1].description}
-              tags={t.domain.cards[1].tags}
-              image={domainImages[1]}
-              imagePosition={imagePositions[1]}
-              bgColor={bgColors[1]}
-            />
-          </div>
-          <div className="lg:col-span-5">
-            <DomainCard
-              delay={delays[2]}
-              title={t.domain.cards[2].title}
-              description={t.domain.cards[2].description}
-              tags={t.domain.cards[2].tags}
-              image={domainImages[2]}
-              imagePosition={imagePositions[2]}
-              bgColor={bgColors[2]}
-              isFullHeight={isFullHeights[2]}
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -191,9 +153,7 @@ type DomainCardProps = {
   description: string;
   tags: string[];
   image: string;
-  imagePosition: "bottom-right" | "bottom-full" | "bottom-full-tall";
   bgColor: string;
-  isFullHeight?: boolean;
 };
 
 const DomainCard = ({
@@ -202,9 +162,7 @@ const DomainCard = ({
   description,
   tags,
   image,
-  imagePosition,
   bgColor,
-  isFullHeight = false,
 }: DomainCardProps) => {
   const cardRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, amount: 0.2 });
@@ -217,7 +175,7 @@ const DomainCard = ({
       scale: 1,
       transition: {
         duration: 0.7,
-        delay: delay,
+        delay,
         ease: [0.22, 1, 0.36, 1] as const,
       },
     },
@@ -229,13 +187,8 @@ const DomainCard = ({
       variants={cardVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      whileHover={{
-        y: -8,
-        transition: { duration: 0.3 },
-      }}
-      className={`${bgColor} rounded-3xl ${
-        isFullHeight ? "h-full" : "min-h-[350px] md:min-h-[370px]"
-      } flex flex-col overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500`}
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className={`${bgColor} rounded-3xl flex flex-col overflow-hidden relative group cursor-pointer shadow-lg hover:shadow-2xl transition-shadow duration-500`}
     >
       {/* Content */}
       <div className="relative z-10 p-6 md:p-8">
@@ -250,21 +203,17 @@ const DomainCard = ({
           <p className="text-gray-600 mb-6 max-w-md text-sm md:text-base">
             {description}
           </p>
-          <div className="flex flex-wrap gap-2 mb-4 md:mb-6">
+          <div className="flex flex-wrap gap-2">
             {tags.map((tag, i) => (
               <motion.span
                 key={tag}
-                custom={i}
                 initial={{ opacity: 0, scale: 0.8, y: 10 }}
                 animate={
                   isInView
                     ? { opacity: 1, scale: 1, y: 0 }
                     : { opacity: 0, scale: 0.8, y: 10 }
                 }
-                transition={{
-                  delay: delay + 0.3 + i * 0.1,
-                  duration: 0.4,
-                }}
+                transition={{ delay: delay + 0.3 + i * 0.1, duration: 0.4 }}
                 whileHover={{
                   scale: 1.1,
                   backgroundColor: "rgba(37, 99, 235, 0.1)",
@@ -278,77 +227,30 @@ const DomainCard = ({
           </div>
         </motion.div>
       </div>
-      {imagePosition === "bottom-right" && (
-        <motion.div
-          className="absolute bottom-0 right-0 w-full h-32 md:h-40 lg:h-44"
-          initial={{ opacity: 0, x: 50, scale: 1.1 }}
-          animate={
-            isInView
-              ? { opacity: 1, x: 0, scale: 1 }
-              : { opacity: 0, x: 50, scale: 1.1 }
-          }
-          transition={{ delay: delay + 0.4, duration: 0.8 }}
-        >
-          <motion.img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover rounded-tl-3xl opacity-80 md:opacity-100"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5 }}
-          />
-        </motion.div>
-      )}
 
-      {imagePosition === "bottom-full" && (
-        <motion.div
-          className="mt-auto"
-          initial={{ opacity: 0, y: 50, scale: 1.1 }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 50, scale: 1.1 }
-          }
-          transition={{ delay: delay + 0.4, duration: 0.8 }}
-        >
-          <motion.img
-            src={image}
-            alt={title}
-            className="w-full h-40 md:h-48 object-cover rounded-2xl shadow-md"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5 }}
-          />
-        </motion.div>
-      )}
+      {/* Image */}
+      <motion.div
+        className="mt-auto"
+        initial={{ opacity: 0, y: 30, scale: 1.05 }}
+        animate={
+          isInView
+            ? { opacity: 1, y: 0, scale: 1 }
+            : { opacity: 0, y: 30, scale: 1.05 }
+        }
+        transition={{ delay: delay + 0.4, duration: 0.8 }}
+      >
+        <motion.img
+          src={image}
+          alt={title}
+          className="w-full h-52 md:h-64 object-cover"
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.5 }}
+        />
+      </motion.div>
 
-      {imagePosition === "bottom-full-tall" && (
-        <motion.div
-          className="flex-grow h-64 md:h-80 lg:h-full mt-auto"
-          initial={{ opacity: 0, y: 50, scale: 1.1 }}
-          animate={
-            isInView
-              ? { opacity: 1, y: 0, scale: 1 }
-              : { opacity: 0, y: 50, scale: 1.1 }
-          }
-          transition={{ delay: delay + 0.4, duration: 0.8 }}
-        >
-          <motion.img
-            src={image}
-            alt={title}
-            className="w-full h-full object-cover rounded-2xl"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.5 }}
-          />
-        </motion.div>
-      )}
       <motion.div
         className="absolute inset-0 bg-gradient-to-t from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         initial={{ opacity: 0 }}
-      />
-      <motion.div
-        className="absolute top-4 right-4 w-12 h-12 border-2 border-blue-600/20 rounded-full opacity-0 group-hover:opacity-100"
-        initial={{ scale: 0, rotate: -180 }}
-        whileHover={{ scale: 1, rotate: 0 }}
-        transition={{ duration: 0.5 }}
       />
     </motion.div>
   );
