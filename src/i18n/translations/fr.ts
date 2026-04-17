@@ -127,6 +127,12 @@ const fr = {
           "Formations corporate sur DevOps appliquée au développement.",
         tags: ["Workshops IA + Dev", "Formation équipes", "Coaching technique"],
       },
+      {
+        title: "Cybersécurité & Protection des données",
+        description:
+          "Audit, sécurisation et conformité de vos systèmes d'information.",
+        tags: ["Audit sécurité", "Protection des données", "Conformité RGPD"],
+      },
     ],
   },
   contact: {

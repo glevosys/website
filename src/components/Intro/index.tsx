@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../ui/Button";
 import { useLanguage } from "../../i18n/LanguageContext";
+import africanMotifs from "../../assets/pictures/african-motifs.png";
 
 const Intro = () => {
   const { t } = useLanguage();
@@ -106,10 +107,12 @@ const Intro = () => {
           }}
         />
         <div
-          className="absolute inset-0 opacity-[0.015]"
+          className="absolute inset-0 opacity-[0.28]"
           style={{
-            backgroundImage: `radial-gradient(circle, #000 1px, transparent 1px)`,
-            backgroundSize: "40px 40px",
+            backgroundImage: `url(${africanMotifs})`,
+            backgroundSize: "600px auto",
+            backgroundRepeat: "repeat",
+            backgroundPosition: "center",
           }}
         />
       </div>

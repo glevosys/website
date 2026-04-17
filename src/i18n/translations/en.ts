@@ -124,6 +124,12 @@ const en = {
         description: "Corporate training on DevOps applied to development.",
         tags: ["AI + Dev Workshops", "Team Training", "Technical Coaching"],
       },
+      {
+        title: "Cybersecurity & Data Protection",
+        description:
+          "Audit, security hardening and compliance of your information systems.",
+        tags: ["Security Audit", "Data Protection", "GDPR Compliance"],
+      },
     ],
   },
   contact: {
