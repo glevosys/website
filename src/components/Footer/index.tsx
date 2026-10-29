@@ -53,7 +53,7 @@ const Footer = () => {
                 www.glevosys.com
               </li>
               <li className="cursor-pointer hover:text-white transition-colors text-white/70">
-                contact@glevosys.com
+                info@glevosys.com
               </li>
               <li className="text-white/70">Afrique</li>
             </ul>
