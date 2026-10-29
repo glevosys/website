@@ -74,11 +74,11 @@ const Contact = () => {
         `Service: ${data.service}\n\n` +
         `Message:\n${data.message}`,
     );
-    window.location.href = `mailto:contact@glevosys.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@glevosys.com?subject=${subject}&body=${body}`;
   };
 
   const contactItems = [
-    { icon: "📧", label: t.contact.emailLabel, value: "contact@glevosys.com" },
+    { icon: "📧", label: t.contact.emailLabel, value: "info@glevosys.com" },
     { icon: "📱", label: t.contact.phoneLabel, value: "+237 6XX XXX XXX" },
     { icon: "📍", label: t.contact.locationLabel, value: "Yaoundé, Cameroun" },
   ];
