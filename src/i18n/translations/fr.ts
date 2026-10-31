@@ -94,9 +94,6 @@ const fr = {
           "Accompagnement à long terme",
         ],
       },
-      {
-        title: "Et bien plus...",
-      },
     ],
   },
   mission: {
