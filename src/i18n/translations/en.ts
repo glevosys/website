@@ -93,9 +93,6 @@ const en = {
           "Long-term support",
         ],
       },
-      {
-        title: "And much more...",
-      },
     ],
   },
   mission: {

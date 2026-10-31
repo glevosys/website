@@ -10,7 +10,6 @@ const cardImages = [
   images.c3,
   images.c4,
   images.c5,
-  images.c6,
 ];
 
 type CardSolutionProps = {
@@ -192,30 +191,6 @@ const CardSolution = ({
                 →
               </motion.span>
             </motion.a>
-          </motion.div>
-        )}
-        {!content && !link && (
-          <motion.div
-            className="flex items-center justify-center h-full"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={
-              isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }
-            }
-            transition={{ delay: 0.5 + index * 0.1, duration: 0.6 }}
-          >
-            <motion.div
-              className="text-center"
-              animate={{
-                y: [0, -10, 0],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <span className="text-6xl">✨</span>
-            </motion.div>
           </motion.div>
         )}
       </div>
