@@ -152,6 +152,8 @@ const en = {
       serviceWeb: "Web/App Development",
       serviceAI: "Artificial Intelligence",
       serviceSecurity: "Cybersecurity",
+      serviceNetwork: "Network & Cloud Architecture",
+      serviceTraining: "Training & Upskilling",
       messageLabel: "A word to tell us more?",
       messageOptional: "(optional)",
       messagePlaceholder: "Briefly describe your context or idea...",
