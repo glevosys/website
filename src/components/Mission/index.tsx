@@ -6,21 +6,21 @@ const Mission = () => {
   const { t } = useLanguage();
 
   const flags = [
-    images.bf,
-    images.cm,
-    images.cg,
-    images.gh,
-    images.ic,
-    images.tg,
-    images.bf,
-    images.cm,
-    images.cg,
-    images.gh,
-    images.ic,
-    images.tg,
-    images.gh,
-    images.ic,
-    images.tg,
+    { src: images.bf, alt: "Flag of Burkina Faso" },
+    { src: images.cm, alt: "Flag of Cameroon" },
+    { src: images.cg, alt: "Flag of Congo" },
+    { src: images.gh, alt: "Flag of Ghana" },
+    { src: images.ic, alt: "Flag of Ivory Coast" },
+    { src: images.tg, alt: "Flag of Togo" },
+    { src: images.bf, alt: "Flag of Burkina Faso" },
+    { src: images.cm, alt: "Flag of Cameroon" },
+    { src: images.cg, alt: "Flag of Congo" },
+    { src: images.gh, alt: "Flag of Ghana" },
+    { src: images.ic, alt: "Flag of Ivory Coast" },
+    { src: images.tg, alt: "Flag of Togo" },
+    { src: images.gh, alt: "Flag of Ghana" },
+    { src: images.ic, alt: "Flag of Ivory Coast" },
+    { src: images.tg, alt: "Flag of Togo" },
   ];
 
   const containerVariants = {
@@ -157,8 +157,8 @@ const Mission = () => {
                   }}
                 >
                   <img
-                    src={flag}
-                    alt=""
+                    src={flag.src}
+                    alt={flag.alt}
                     className="w-full h-full object-cover"
                   />
                 </motion.div>
