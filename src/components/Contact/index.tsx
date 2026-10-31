@@ -79,7 +79,7 @@ const Contact = () => {
 
   const contactItems = [
     { icon: "📧", label: t.contact.emailLabel, value: "info@glevosys.com" },
-    { icon: "📱", label: t.contact.phoneLabel, value: "+237 6XX XXX XXX" },
+    { icon: "📱", label: t.contact.phoneLabel, value: "+237 687 218 062" },
     { icon: "📍", label: t.contact.locationLabel, value: "Yaoundé, Cameroun" },
   ];
 
