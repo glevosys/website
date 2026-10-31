@@ -302,6 +302,8 @@ const Contact = () => {
                   <option value="web">{t.contact.form.serviceWeb}</option>
                   <option value="ia">{t.contact.form.serviceAI}</option>
                   <option value="secu">{t.contact.form.serviceSecurity}</option>
+                  <option value="network">{t.contact.form.serviceNetwork}</option>
+                  <option value="training">{t.contact.form.serviceTraining}</option>
                 </motion.select>
                 <motion.div
                   className="absolute right-6 top-1/2 -translate-y-1/2 pointer-events-none text-white"
