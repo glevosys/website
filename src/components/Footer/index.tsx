@@ -1,5 +1,5 @@
 import images from "../../assets/pictures";
-
+import { Linkedin } from "lucide-react";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const Footer = () => {
@@ -22,6 +22,11 @@ const Footer = () => {
               <p className="max-w-sm leading-relaxed text-white/50">
                 {t.footer.description}
               </p>
+            </div>
+            <div className="flex space-x-5 pt-4">
+              <a href="https://www.linkedin.com/company/glevosys/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-6 w-6 cursor-pointer hover:text-white transition-colors" />
+              </a>
             </div>
           </div>
           <div className="lg:col-span-4 lg:pl-10">
