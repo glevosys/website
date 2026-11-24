@@ -179,6 +179,107 @@ const en = {
       "Training",
     ],
     contactTitle: "Contact",
+    careers: "Careers",
+  },
+  careers: {
+    badge: "Careers",
+    title: "Join GlevoSys",
+    intro:
+      "We build digital solutions for African businesses. Explore our open positions.",
+    openPositionsTitle: "Open positions",
+    viewJob: "View position",
+    backToList: "All positions",
+    pageTitle: "Careers — GlevoSys",
+    applyCta: "Apply",
+    jobs: [
+      {
+        slug: "full-stack-developer-intern",
+        category: "Internship",
+        title: "Full-Stack Developer Intern (M/F)",
+        meta: [
+          { label: "Location", value: "Yaoundé, Cameroon · On-site" },
+          { label: "Contract type", value: "Internship · 6 months" },
+          { label: "Open positions", value: "1 to 2" },
+        ],
+        about: {
+          title: "About Glevosys",
+          paragraphs: [
+            "Glevosys is a digital services and solutions company operating in West Africa and Cameroon. We help businesses deploy and evolve their digital solutions, train their teams and develop our own products.",
+          ],
+        },
+        role: {
+          title: "About the Role",
+          paragraphs: [
+            "We are looking for full-stack developer interns to contribute to a digital product we are building in the logistics sector.",
+            "You will receive mentorship and regular feedback, with increasing responsibilities as you develop your skills and independence.",
+          ],
+          stackLabel: "Our tech stack",
+          stack: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "PostgreSQL",
+            "Docker",
+            "GitHub",
+          ],
+        },
+        lists: [
+          {
+            title: "What You Will Be Doing",
+            items: [
+              "Develop features end to end.",
+              "Write tests, participate in code reviews and adopt software development best practices: Git, pull requests and continuous integration (CI).",
+              "Fix bugs and improve system performance and reliability.",
+              "Contribute to technical documentation.",
+              "Collaborate with the team and learn from user feedback.",
+            ],
+          },
+          {
+            title: "What You Bring",
+            items: [
+              "A solid foundation in web development: HTML/CSS and JavaScript or TypeScript.",
+              "Some experience with a backend programming language, preferably Python.",
+              "A good understanding of Git fundamentals.",
+              "A project to showcase: personal, academic or open source.",
+              "Curiosity, a sense of responsibility and clear communication.",
+            ],
+          },
+          {
+            title: "Nice to Have, but Not Required",
+            items: [
+              "Experience with React, Django, SQL/PostgreSQL, Docker or automated testing.",
+              "Responsible use of AI tools for software development.",
+              "Professional proficiency in French and English.",
+            ],
+          },
+          {
+            title: "What We Offer",
+            items: [
+              "Hands-on production work on a product designed for businesses.",
+              "Mentorship from experienced developers and regular feedback.",
+              "Increasing responsibilities, from initial bug fixes to independently developing features.",
+              "A collaborative working environment in Yaoundé.",
+              "Experience in a startup building solutions for African markets.",
+              "The possibility of a longer-term collaboration, depending on performance and business needs.",
+            ],
+          },
+        ],
+        apply: {
+          title: "How to Apply",
+          intro: "Send the following to info@glevosys.com:",
+          items: [
+            "Your CV.",
+            "A link to your GitHub profile or portfolio.",
+            "A short message describing a project you have built and what you learned from it.",
+          ],
+          subjectLabel: "Email subject:",
+          subject: "Full-Stack Developer Intern — [Your name]",
+        },
+      },
+    ],
   },
 };
 

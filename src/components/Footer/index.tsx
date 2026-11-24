@@ -1,5 +1,6 @@
 import images from "../../assets/pictures";
 import { Linkedin } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const Footer = () => {
@@ -56,6 +57,14 @@ const Footer = () => {
                 info@glevosys.com
               </li>
               <li className="text-white/70">Afrique</li>
+              <li>
+                <Link
+                  to="/careers"
+                  className="text-white/70 hover:text-white transition-colors"
+                >
+                  {t.footer.careers}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLocation, useNavigate } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -10,13 +11,25 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const [activeSection] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
+
+  // Section links point to the home page; from another page, navigate
+  // client-side so the selected language is kept.
+  const goToSection = (e: React.MouseEvent, path: string) => {
+    setOpen(false);
+    if (pathname !== "/") {
+      e.preventDefault();
+      navigate(path);
+    }
+  };
 
   const navs = [
-    { title: t.nav.about, path: "#about", id: "about" },
-    { title: t.nav.solutions, path: "#solution", id: "solution" },
-    { title: t.nav.mission, path: "#mission", id: "mission" },
-    { title: t.nav.domain, path: "#domaine", id: "domaine" },
-    { title: t.nav.contact, path: "#contact", id: "contact" },
+    { title: t.nav.about, path: "/#about", id: "about" },
+    { title: t.nav.solutions, path: "/#solution", id: "solution" },
+    { title: t.nav.mission, path: "/#mission", id: "mission" },
+    { title: t.nav.domain, path: "/#domaine", id: "domaine" },
+    { title: t.nav.contact, path: "/#contact", id: "contact" },
   ];
 
   useEffect(() => {
@@ -159,6 +172,7 @@ const Header = () => {
               >
                 <motion.a
                   href={item.path}
+                  onClick={(e) => goToSection(e, item.path)}
                   className={`font-bold transition-colors relative ${
                     activeSection === item.id
                       ? "text-[#0015CC]"
@@ -274,7 +288,7 @@ const Header = () => {
                     >
                       <motion.a
                         href={item.path}
-                        onClick={() => setOpen(false)}
+                        onClick={(e) => goToSection(e, item.path)}
                         className={`text-4xl font-black block transition-colors ${
                           activeSection === item.id
                             ? "text-[#0015CC]"
