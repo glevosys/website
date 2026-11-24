@@ -5,12 +5,12 @@ import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const cardImages = [
-  images.c1,
+  images.solutionWebApp,
   images.c2,
-  images.c3,
+  images.solutionSecurity,
   images.c4,
-  images.c5,
-  images.c6,
+  images.solutionTraining,
+  images.solutionMore,
 ];
 
 type CardSolutionProps = {
