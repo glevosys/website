@@ -105,10 +105,11 @@ const fr = {
     ],
   },
   mission: {
+    badge: "Notre ambition",
     line1: "Accompagner",
-    line2: "+300 Entreprises africaines",
-    line3: "dans leur transformation numérique",
-    companies: "Entreprises",
+    line2: "300 entreprises africaines",
+    line3: "dans leur transformation numérique d'ici 2030",
+    goal: "Objectif 2030",
   },
   domain: {
     badge: "Nos expertises",

@@ -104,10 +104,11 @@ const en = {
     ],
   },
   mission: {
+    badge: "Our ambition",
     line1: "Supporting",
-    line2: "+300 African companies",
-    line3: "in their digital transformation",
-    companies: "Companies",
+    line2: "300 African companies",
+    line3: "in their digital transformation by 2030",
+    goal: "2030 goal",
   },
   domain: {
     badge: "Our expertise",
