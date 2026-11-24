@@ -53,7 +53,7 @@ const AboutUs = () => {
   };
 
   return (
-    <section className="bg-gradient-to-b from-white via-gray-50/30 to-white py-20 lg:py-32 relative overflow-hidden">
+    <section id="about" className="bg-gradient-to-b from-white via-gray-50/30 to-white py-20 lg:py-32 relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-20 right-0 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl"
