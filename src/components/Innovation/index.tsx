@@ -3,7 +3,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const slideImages = [images.c1, images.c2, images.c3];
+const slideImages = [
+  images.slideInnovation,
+  images.slideExpertise,
+  images.slideImpact,
+];
 
 const Innovation = () => {
   const { t } = useLanguage();

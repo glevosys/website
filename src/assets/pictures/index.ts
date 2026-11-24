@@ -11,9 +11,21 @@ import c3 from "./c3.webp";
 import c4 from "./c4.webp";
 import c5 from "./c5.webp";
 import c6 from "./c6.webp";
-import d1 from "./d1.webp";
-import d2 from "./d2.webp";
-import d3 from "./d3.webp";
+// HD photos from Unsplash (free for commercial use, no attribution required):
+// slide-innovation   https://unsplash.com/photos/qY-XlCf9Zs4
+// slide-expertise    https://unsplash.com/photos/kQIdjLbCghA
+// slide-impact       https://unsplash.com/photos/YDEiseFR_Q8
+// domain-devsecops   https://unsplash.com/photos/842ofHC6MaI
+// domain-development https://unsplash.com/photos/IgUR1iX0mqM
+// domain-training    https://unsplash.com/photos/MDcaad-_hv0
+// domain-security    https://unsplash.com/photos/mT7lXZPjk7U
+import slideInnovation from "./slide-innovation.webp";
+import slideExpertise from "./slide-expertise.webp";
+import slideImpact from "./slide-impact.webp";
+import domainDevsecops from "./domain-devsecops.webp";
+import domainDevelopment from "./domain-development.webp";
+import domainTraining from "./domain-training.webp";
+import domainSecurity from "./domain-security.webp";
 import bf from "./flags/burkina.png";
 import cm from "./flags/cameroon.png";
 import cg from "./flags/congo.png";
@@ -41,9 +53,13 @@ const images = {
   c4,
   c5,
   c6,
-  d1,
-  d2,
-  d3,
+  slideInnovation,
+  slideExpertise,
+  slideImpact,
+  domainDevsecops,
+  domainDevelopment,
+  domainTraining,
+  domainSecurity,
 };
 
 export default images;

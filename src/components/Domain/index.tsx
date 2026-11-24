@@ -4,7 +4,12 @@ import { useRef } from "react";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
 
-const domainImages = [images.d1, images.d2, images.d3, images.c3];
+const domainImages = [
+  images.domainDevsecops,
+  images.domainDevelopment,
+  images.domainTraining,
+  images.domainSecurity,
+];
 
 const Domain = () => {
   const { t } = useLanguage();
