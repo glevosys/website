@@ -95,6 +95,22 @@ const Mission = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={textVariants}
           >
+            <motion.div
+              className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full mb-6 border border-blue-100"
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.span
+                className="w-2 h-2 bg-blue-600 rounded-full"
+                animate={{ scale: [1, 1.3, 1] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              />
+              <span className="text-sm font-semibold text-blue-700">
+                {t.mission.badge}
+              </span>
+            </motion.div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
               <motion.span
                 className="block mb-2"
@@ -202,7 +218,7 @@ const Mission = () => {
                     backgroundSize: "200% 200%",
                   }}
                 >
-                  +300
+                  300
                 </motion.span>
 
                 <motion.span
@@ -212,7 +228,7 @@ const Mission = () => {
                   viewport={{ once: true }}
                   transition={{ delay: 0.5, duration: 0.6 }}
                 >
-                  {t.mission.companies}
+                  {t.mission.goal}
                 </motion.span>
 
                 {/* Decorative elements */}
