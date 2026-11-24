@@ -138,29 +138,28 @@ const AboutUs = () => {
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
           />
-          <motion.div variants={itemVariants}>
-            <p className="text-gray-600 text-lg lg:text-xl leading-relaxed text-justify lg:text-left">
-              {t.about.description
-                .split(". ")
-                .map((sentence, index, arr) => (
-                  <motion.span
-                    key={index}
-                    className="inline-block"
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={
-                      isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
-                    }
-                    transition={{
-                      delay: 0.6 + index * 0.2,
-                      duration: 0.6,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
-                    {sentence}
-                    {index < arr.length - 1 ? ". " : "."}
-                  </motion.span>
-                ))}
-            </p>
+          <motion.div variants={itemVariants} className="max-w-3xl space-y-5">
+            {t.about.description.map((paragraph, index) => (
+              <motion.p
+                key={index}
+                className={
+                  index === 0
+                    ? "text-gray-900 text-xl lg:text-2xl font-medium leading-snug"
+                    : "text-gray-600 text-lg lg:text-xl leading-relaxed"
+                }
+                initial={{ opacity: 0, y: 20 }}
+                animate={
+                  isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }
+                }
+                transition={{
+                  delay: 0.6 + index * 0.2,
+                  duration: 0.6,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
+              >
+                {paragraph}
+              </motion.p>
+            ))}
           </motion.div>
         </motion.div>
         <motion.div

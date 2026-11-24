@@ -42,8 +42,12 @@ const fr = {
   about: {
     badge: "Glevosys",
     heading: "Qui sommes-nous ?",
-    description:
-      "GlevoSys est une entreprise technologique spécialisée dans la transformation numérique des grandes organisations africaines. Inspirée par l'héritage des leaders visionnaires du continent, notre mission est de concevoir, intégrer et sécuriser des solutions numériques à forte valeur ajoutée, allant du cloud et de l'intelligence artificielle au développement d'applications et à la cybersécurité. Nous accompagnons les entreprises dans la modernisation de leurs systèmes, l'optimisation de leurs performances et la montée en compétences de leurs équipes.",
+    description: [
+      "Fondée par trois anciens ingénieurs de Microsoft et de GitHub.",
+      "GlevoSys est une entreprise technologique spécialisée dans la transformation numérique des grandes organisations africaines.",
+      "Inspirée par l'héritage des leaders visionnaires du continent, notre mission est de concevoir, intégrer et sécuriser des solutions numériques à forte valeur ajoutée, allant du cloud et de l'intelligence artificielle au développement d'applications et à la cybersécurité.",
+      "Nous accompagnons les entreprises dans la modernisation de leurs systèmes, l'optimisation de leurs performances et la montée en compétences de leurs équipes.",
+    ],
     toolsTagline: "Nous choisissons des outils en fonction de vos enjeux,",
     toolsEmphasis: "pas l'inverse.",
   },
