@@ -170,6 +170,7 @@ const en = {
     tagline: "From code to growth.",
     description:
       "Supporting African companies in their digital transformation through cloud and AI solutions integration.",
+    navigationTitle: "Navigation",
     solutionsTitle: "Solutions",
     solutions: [
       "Web & App Development",

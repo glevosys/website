@@ -173,6 +173,7 @@ const fr = {
     tagline: "Du code à la croissance.",
     description:
       "Accompagner les entreprises africaines dans leur transformation numérique par l'intégration de solutions cloud et IA.",
+    navigationTitle: "Navigation",
     solutionsTitle: "Solutions",
     solutions: [
       "Développement Web & App",

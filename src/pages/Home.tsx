@@ -15,6 +15,7 @@ const Home = () => {
 
   useEffect(() => {
     if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    else window.scrollTo(0, 0);
   }, [hash]);
 
   return (
