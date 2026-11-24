@@ -182,6 +182,107 @@ const fr = {
       "Formation",
     ],
     contactTitle: "Contact",
+    careers: "Carrières",
+  },
+  careers: {
+    badge: "Carrières",
+    title: "Rejoignez GlevoSys",
+    intro:
+      "Nous construisons des solutions numériques pour les entreprises africaines. Découvrez nos postes ouverts.",
+    openPositionsTitle: "Postes ouverts",
+    viewJob: "Voir l'offre",
+    backToList: "Tous les postes",
+    pageTitle: "Carrières — GlevoSys",
+    applyCta: "Postuler",
+    jobs: [
+      {
+        slug: "full-stack-developer-intern",
+        category: "Stage",
+        title: "Stagiaire Développeur Full-Stack (H/F)",
+        meta: [
+          { label: "Localisation", value: "Yaoundé, Cameroun · Présentiel" },
+          { label: "Type de contrat", value: "Stage · 6 mois" },
+          { label: "Postes à pourvoir", value: "1 à 2" },
+        ],
+        about: {
+          title: "À propos de Glevosys",
+          paragraphs: [
+            "Glevosys est une entreprise de services et de solutions numériques présente en Afrique de l'Ouest et au Cameroun. Nous aidons les entreprises à déployer leurs solutions numériques et à les faire évoluer, formons leurs équipes et développons nos propres produits.",
+          ],
+        },
+        role: {
+          title: "À propos du poste",
+          paragraphs: [
+            "Nous recherchons des stagiaires développeurs Full-Stack pour contribuer à un produit numérique que nous construisons dans le secteur de la logistique.",
+            "Vous bénéficierez de mentorat et de retours réguliers, avec des responsabilités croissantes à mesure que vous gagnerez en compétences et en autonomie.",
+          ],
+          stackLabel: "Notre environnement technique",
+          stack: [
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Python",
+            "Django",
+            "Django REST Framework",
+            "PostgreSQL",
+            "Docker",
+            "GitHub",
+          ],
+        },
+        lists: [
+          {
+            title: "Vos missions",
+            items: [
+              "Développer des fonctionnalités de bout en bout.",
+              "Écrire des tests, participer aux revues de code et adopter les bonnes pratiques de développement : Git, pull requests et intégration continue (CI).",
+              "Corriger les bugs et améliorer les performances et la fiabilité du système.",
+              "Contribuer à la documentation technique.",
+              "Collaborer avec l'équipe et apprendre des retours des utilisateurs.",
+            ],
+          },
+          {
+            title: "Votre profil",
+            items: [
+              "De bonnes bases en développement web : HTML/CSS et JavaScript ou TypeScript.",
+              "Une première expérience avec un langage backend, de préférence Python.",
+              "La maîtrise des bases de Git.",
+              "Un projet à montrer : personnel, scolaire ou open source.",
+              "De la curiosité, le sens des responsabilités et une communication claire.",
+            ],
+          },
+          {
+            title: "Des atouts, sans être des prérequis",
+            items: [
+              "Une expérience avec React, Django, SQL/PostgreSQL, Docker ou les tests automatisés.",
+              "Un usage responsable des outils d'IA pour le développement.",
+              "Une aisance professionnelle en français et en anglais.",
+            ],
+          },
+          {
+            title: "Ce que nous vous proposons",
+            items: [
+              "Du travail concret en production, sur un produit destiné aux entreprises.",
+              "Le mentorat de développeurs expérimentés et des retours réguliers.",
+              "Une prise de responsabilités progressive, des premières corrections au développement autonome de fonctionnalités.",
+              "Un environnement de travail collaboratif à Yaoundé.",
+              "Une immersion dans une startup qui développe des solutions pour les marchés africains.",
+              "La possibilité d'une collaboration à plus long terme, selon les résultats et les besoins de l'entreprise.",
+            ],
+          },
+        ],
+        apply: {
+          title: "Comment postuler",
+          intro: "Envoyez à info@glevosys.com :",
+          items: [
+            "Votre CV.",
+            "Un lien vers votre profil GitHub ou votre portfolio.",
+            "Un court message présentant un projet que vous avez réalisé et ce que vous en avez appris.",
+          ],
+          subjectLabel: "Objet du mail :",
+          subject: "Stagiaire Développeur Full-Stack — [Votre nom]",
+        },
+      },
+    ],
   },
 };
 
