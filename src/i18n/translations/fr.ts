@@ -1,5 +1,6 @@
 const fr = {
   nav: {
+    about: "Qui sommes-nous ?",
     solutions: "Nos solutions",
     mission: "Mission",
     domain: "Domaine",

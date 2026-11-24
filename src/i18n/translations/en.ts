@@ -1,5 +1,6 @@
 const en = {
   nav: {
+    about: "Who are we?",
     solutions: "Our solutions",
     mission: "Mission",
     domain: "Domain",

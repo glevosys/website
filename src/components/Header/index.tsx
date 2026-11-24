@@ -12,6 +12,7 @@ const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navs = [
+    { title: t.nav.about, path: "#about", id: "about" },
     { title: t.nav.solutions, path: "#solution", id: "solution" },
     { title: t.nav.mission, path: "#mission", id: "mission" },
     { title: t.nav.domain, path: "#domaine", id: "domaine" },
