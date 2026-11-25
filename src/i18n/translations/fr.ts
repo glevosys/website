@@ -25,8 +25,8 @@ const fr = {
   about: {
     badge: "GlevoSys",
     heading: "Qui sommes-nous ?",
-    founders: "Fondée par trois anciens ingénieurs de Microsoft et de GitHub.",
     description: [
+      "Fondée par trois anciens ingénieurs de Microsoft et de GitHub.",
       "GlevoSys est une entreprise technologique spécialisée dans la transformation numérique des grandes organisations africaines.",
       "Inspirée par l'héritage des leaders visionnaires du continent, notre mission est de concevoir, intégrer et sécuriser des solutions numériques à forte valeur ajoutée, allant du cloud et de l'intelligence artificielle au développement d'applications et à la cybersécurité.",
       "Nous accompagnons les entreprises dans la modernisation de leurs systèmes, l'optimisation de leurs performances et la montée en compétences de leurs équipes.",
@@ -133,37 +133,6 @@ const fr = {
         tags: ["Audit sécurité", "Protection des données", "Conformité RGPD"],
       },
     ],
-  },
-  why: {
-    badge: "Pourquoi GlevoSys",
-    title: "Fondée par d'anciens ingénieurs de Microsoft et de GitHub.",
-    reasons: [
-      {
-        strong: "Pensé pour le terrain africain",
-        text: " : connectivité, budgets, mobile money.",
-      },
-      { strong: "Sécurité par défaut", text: " sur chaque projet." },
-      {
-        strong: "Transfert de compétences inclus",
-        text: " : vos équipes deviennent autonomes.",
-      },
-      {
-        strong: "Indépendants des éditeurs",
-        text: " : Google Cloud, Azure, AWS, GitHub ou open source, selon votre contexte.",
-      },
-    ],
-    sectorsTitle: "Secteurs que nous adressons",
-    sectors: [
-      "Banque & assurance",
-      "Télécoms",
-      "Secteur public",
-      "Énergie & mines",
-      "Distribution",
-      "Transport & logistique",
-      "Agro-industrie",
-      "Santé",
-    ],
-    location: "Basés à Yaoundé, Cameroun",
   },
   contact: {
     badge: "Contactez-nous",

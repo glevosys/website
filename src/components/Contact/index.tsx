@@ -61,21 +61,20 @@ const Contact = () => {
   return (
     <section id="contact" className="scroll-mt-20 bg-white py-20 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
-        <Reveal className="relative overflow-hidden rounded-3xl bg-[#0015CC] text-white grid lg:grid-cols-[1fr_1.15fr] gap-10 p-7 sm:p-10 lg:p-14">
-          <div className="absolute inset-0 gs-dots opacity-25 pointer-events-none" />
+        <Reveal className="relative overflow-hidden rounded-3xl border border-[#E6E8F0] bg-[#F7F8FC] text-[#0B1020] grid lg:grid-cols-[1fr_1.15fr] gap-10 p-7 sm:p-10 lg:p-14">
           <div className="relative">
-            <Eyebrow dark>{t.contact.badge}</Eyebrow>
+            <Eyebrow>{t.contact.badge}</Eyebrow>
             <h2 className="text-3xl md:text-[40px] leading-tight font-bold tracking-tight">
               {t.contact.title}
             </h2>
             <ul className="mt-10 space-y-5">
               {contactItems.map(({ icon: Icon, label, value, href }) => (
                 <li key={label} className="flex items-start gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white text-[#0015CC]">
                     <Icon />
                   </span>
                   <span>
-                    <span className="block text-xs uppercase tracking-[1px] text-white/60">
+                    <span className="block text-xs uppercase tracking-[1px] text-[#5A6078]">
                       {label}
                     </span>
                     {href ? (

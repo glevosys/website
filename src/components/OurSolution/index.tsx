@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FiArrowRight, FiCheck } from "react-icons/fi";
+import { FiArrowRight } from "react-icons/fi";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
 import Reveal, { Eyebrow } from "../Reveal";
@@ -17,19 +17,18 @@ const OurSolution = () => {
   const { product, more } = t.solution;
 
   return (
-    <section id="solution" className="scroll-mt-20 bg-[#F7F8FC] py-20 md:py-24">
+    <section id="solution" className="scroll-mt-20 bg-gradient-to-b from-white to-[#F7F8FC] py-20 md:py-24">
       <div className="max-w-[1200px] mx-auto px-6">
-        <Reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <Eyebrow>{t.solution.badge}</Eyebrow>
-            <h2 className="text-3xl md:text-[40px] leading-tight font-bold text-[#0B1020] tracking-tight">
-              {t.solution.title}
-            </h2>
-            <p className="mt-3 text-[#5A6078] max-w-xl">{t.solution.subtitle}</p>
-          </div>
+        <Reveal className="max-w-3xl mx-auto text-center mb-12">
+          <Eyebrow>{t.solution.badge}</Eyebrow>
+          <h2 className="text-3xl md:text-[40px] leading-tight font-bold text-[#0B1020] tracking-tight">
+            {t.solution.title}
+          </h2>
+          <div className="mx-auto mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#0015CC] to-[#7668D9]" aria-hidden="true" />
+          <p className="mt-4 text-[#5A6078]">{t.solution.subtitle}</p>
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 font-semibold text-[#0015CC] hover:text-[#000E8A] shrink-0"
+            className="mt-4 inline-flex items-center gap-2 font-semibold text-[#0015CC] hover:text-[#000E8A]"
           >
             {t.solution.cta}
             <FiArrowRight />
@@ -64,21 +63,22 @@ const OurSolution = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {t.solution.cards.map((card, i) => (
             <Reveal key={card.title} delay={(i % 3) * 0.05}>
-              <article className="h-full rounded-2xl border border-[#E6E8F0] bg-white overflow-hidden">
+              <article className="h-full rounded-2xl border border-[#E6E8F0] bg-white overflow-hidden shadow-sm transition-shadow hover:shadow-lg">
                 <img
                   src={cardImages[i]}
                   alt=""
                   loading="lazy"
-                  className="h-32 w-full object-cover"
+                  className="h-36 w-full object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-[#0B1020] mb-3">
+                  <h3 className="text-lg font-semibold text-[#0B1020]">
                     {card.title}
                   </h3>
+                  <div className="mt-3 mb-4 h-0.5 w-10 rounded-full bg-gradient-to-r from-[#0015CC] to-[#7668D9]" aria-hidden="true" />
                   <ul className="space-y-2 text-sm text-[#444B63]">
                     {card.content.map((item) => (
                       <li key={item} className="flex gap-2">
-                        <FiCheck className="mt-0.5 shrink-0 text-[#0015CC]" />
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#0015CC]" aria-hidden="true" />
                         {item}
                       </li>
                     ))}
@@ -88,15 +88,16 @@ const OurSolution = () => {
             </Reveal>
           ))}
           <Reveal delay={0.1}>
-            <article className="h-full rounded-2xl border border-[#E6E8F0] bg-white overflow-hidden flex flex-col">
+            <article className="h-full rounded-2xl border border-[#E6E8F0] bg-white overflow-hidden flex flex-col shadow-sm transition-shadow hover:shadow-lg">
               <img
                 src={images.solutionMore}
                 alt=""
                 loading="lazy"
-                className="h-32 w-full object-cover"
+                className="h-36 w-full object-cover"
               />
               <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-lg font-semibold text-[#0B1020] mb-3">{more.title}</h3>
+                <h3 className="text-lg font-semibold text-[#0B1020]">{more.title}</h3>
+                <div className="mt-3 mb-4 h-0.5 w-10 rounded-full bg-gradient-to-r from-[#0015CC] to-[#7668D9]" aria-hidden="true" />
                 <p className="text-sm text-[#444B63] leading-relaxed">{more.description}</p>
                 <a
                   href="#contact"

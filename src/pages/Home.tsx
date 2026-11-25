@@ -8,7 +8,6 @@ import Header from "../components/Header";
 import Intro from "../components/Intro";
 import Mission from "../components/Mission";
 import OurSolution from "../components/OurSolution";
-import Why from "../components/Why";
 
 const Home = () => {
   const { hash } = useLocation();
@@ -26,7 +25,6 @@ const Home = () => {
       <OurSolution />
       <Mission />
       <Domain />
-      <Why />
       <Contact />
       <Footer />
     </>

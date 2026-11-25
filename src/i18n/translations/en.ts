@@ -25,11 +25,11 @@ const en = {
   about: {
     badge: "GlevoSys",
     heading: "Who are we?",
-    founders: "Founded by three former Microsoft and GitHub engineers.",
     description: [
+      "Founded by three former Microsoft and GitHub engineers.",
       "GlevoSys is a technology company specializing in the digital transformation of large African organizations.",
-      "Inspired by the legacy of the continent's visionary leaders, our mission is to design, integrate and secure high-value digital solutions, from cloud and artificial intelligence to application development and cybersecurity.",
-      "We help companies modernize their systems, optimize their performance and upskill their teams.",
+      "Inspired by the legacy of the continent's visionary leaders, our mission is to design, integrate and secure high-value digital solutions, spanning cloud and artificial intelligence to application development and cybersecurity.",
+      "We support companies in modernizing their systems, optimizing their performance and upskilling their teams.",
     ],
     toolsTagline: "We choose tools based on your challenges,",
     toolsEmphasis: "not the other way around.",
@@ -129,37 +129,6 @@ const en = {
         tags: ["Security audit", "Data protection", "GDPR compliance"],
       },
     ],
-  },
-  why: {
-    badge: "Why GlevoSys",
-    title: "Founded by former Microsoft and GitHub engineers.",
-    reasons: [
-      {
-        strong: "Built for African realities",
-        text: ": connectivity, budgets, mobile money.",
-      },
-      { strong: "Security by default", text: " on every project." },
-      {
-        strong: "Skills transfer included",
-        text: ": your teams become autonomous.",
-      },
-      {
-        strong: "Vendor-independent",
-        text: ": Google Cloud, Azure, AWS, GitHub or open source, depending on your context.",
-      },
-    ],
-    sectorsTitle: "Sectors we serve",
-    sectors: [
-      "Banking & insurance",
-      "Telecoms",
-      "Public sector",
-      "Energy & mining",
-      "Retail",
-      "Transport & logistics",
-      "Agribusiness",
-      "Healthcare",
-    ],
-    location: "Based in Yaoundé, Cameroon",
   },
   contact: {
     badge: "Contact us",
