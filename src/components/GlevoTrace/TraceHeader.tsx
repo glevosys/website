@@ -15,7 +15,6 @@ const TraceHeader = () => {
     { href: "#probleme", label: g.nav.problem },
     { href: "#presentation", label: g.nav.how },
     { href: "#whatsapp", label: g.nav.whatsapp },
-    { href: "#pilote", label: g.nav.pilot },
   ];
 
   return (

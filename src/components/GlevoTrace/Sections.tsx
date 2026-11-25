@@ -1,7 +1,14 @@
 import { FaWhatsapp } from "react-icons/fa";
-import { FiCheck } from "react-icons/fi";
+import { FiBarChart2, FiCheck, FiClipboard, FiCreditCard, FiFileText } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageContext";
 import Reveal, { Eyebrow } from "../Reveal";
+
+const problemIcons = {
+  agreements: FiFileText,
+  expenses: FiClipboard,
+  payments: FiCreditCard,
+  margin: FiBarChart2,
+};
 
 export const Strengths = () => {
   const { t } = useLanguage();
@@ -33,45 +40,22 @@ export const Problem = () => {
           <p className="mt-3 text-[#5A6078]">{p.subtitle}</p>
         </Reveal>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {p.items.map((item, i) => (
-            <Reveal key={item.title} delay={i * 0.05}>
-              <div className="h-full rounded-2xl border border-[#E6E8F0] p-6 border-t-4 border-t-[#F5A524]">
-                <h3 className="font-semibold text-[#0B1020]">{item.title}</h3>
-                <p className="mt-2 text-sm text-[#5A6078] leading-relaxed">{item.text}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export const Promises = () => {
-  const { t } = useLanguage();
-  const p = t.glevotrace.promises;
-  return (
-    <section className="bg-[#F7F8FC] py-20 md:py-24">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <Reveal>
-          <h2 className="text-3xl md:text-[40px] leading-tight font-bold text-[#0B1020] tracking-tight mb-12">
-            {p.title}
-          </h2>
-        </Reveal>
-        <div className="grid md:grid-cols-2 gap-6">
-          {p.items.map((item, i) => (
-            <Reveal key={item.title} delay={(i % 2) * 0.05}>
-              <div className="h-full rounded-2xl border border-[#E6E8F0] bg-white p-7 flex gap-5">
-                <span className="text-3xl font-bold text-[#0015CC] leading-none">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <div>
-                  <h3 className="text-lg font-semibold text-[#0B1020]">{item.title}</h3>
-                  <p className="mt-2 text-[#5A6078] leading-relaxed">{item.text}</p>
+          {p.items.map((item, i) => {
+            const Icon = problemIcons[item.id];
+            return (
+              <Reveal key={item.id} delay={i * 0.05}>
+                <div className="h-full rounded-2xl border border-[#E6E8F0] p-6 border-t-4 border-t-[#F5A524]">
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#E8ECFF] text-[#0015CC]" aria-hidden="true">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="font-semibold text-[#0B1020]">{item.title}</h3>
+                  </div>
+                  <p className="mt-4 text-sm text-[#5A6078] leading-relaxed">{item.text}</p>
                 </div>
-              </div>
-            </Reveal>
-          ))}
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

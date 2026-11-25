@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiArrowRight, FiChevronDown, FiExternalLink } from "react-icons/fi";
+import { FiChevronDown, FiExternalLink } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const introductionId = "DEv4vaXRtjE";
@@ -52,13 +52,6 @@ const Videos = () => {
             {video.title}
           </h2>
           <p className="mt-4 text-[#5A6078] leading-relaxed">{video.description}</p>
-          <a
-            href="#demo"
-            className="mt-6 inline-flex items-center gap-2 font-semibold text-[#0015CC] hover:underline"
-          >
-            {video.interactiveLink}
-            <FiArrowRight aria-hidden="true" />
-          </a>
         </div>
         <div className="mt-8">
           <YouTubeVideo

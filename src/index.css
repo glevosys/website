@@ -3,31 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Light.ttf") format("truetype");
-  font-weight: 300;
+  font-family: "IBM Plex Sans";
+  src: url("./assets/fonts/IBMPlexSans-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
 }
 
 @keyframes scroll {

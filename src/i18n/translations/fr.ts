@@ -187,7 +187,6 @@ const fr = {
       problem: "Le problème",
       how: "Comment ça marche",
       whatsapp: "WhatsApp",
-      pilot: "Offre pilote",
       cta: "Démarrer un pilote",
     },
     hero: {
@@ -214,9 +213,7 @@ const fr = {
     },
     strengths: [
       "En français et en F CFA",
-      "Connecté à WhatsApp",
       "Aucun matériel à installer",
-      "Aucune limite de camions",
       "Équipe formée par GlevoSys",
     ],
     videos: {
@@ -224,10 +221,9 @@ const fr = {
       description:
         "Découvrez comment GlevoTrace vous aide à suivre vos voyages, vos dépenses et vos paiements.",
       primaryTitle: "Présentation de GlevoTrace",
-      additionalLabel: "Voir une autre démonstration",
+      additionalLabel: "Voir démo du produit",
       additionalTitle: "Démonstration complémentaire de GlevoTrace",
       watchOnYouTube: "Regarder sur YouTube",
-      interactiveLink: "Découvrir la démo interactive",
     },
     problem: {
       badge: "Le problème",
@@ -236,41 +232,24 @@ const fr = {
         "La plupart des transporteurs savent où sont leurs camions, mais pas quels voyages ont rapporté.",
       items: [
         {
+          id: "agreements" as const,
           title: "Les accords",
           text: "Sur papier ou dans des fils WhatsApp : prix, trajet et avance restent contestables.",
         },
         {
+          id: "expenses" as const,
           title: "Les dépenses",
           text: "Carburant, péages et frais arrivent tard ou sans reçu, rarement validés.",
         },
         {
+          id: "payments" as const,
           title: "Les paiements",
           text: "Avances et acomptes brouillent ce qui est facturé, encaissé et encore dû.",
         },
         {
+          id: "margin" as const,
           title: "La marge",
           text: "Connue en fin de mois au mieux : trop tard pour corriger un trajet ou un client lent.",
-        },
-      ],
-    },
-    promises: {
-      title: "Nos quatre promesses",
-      items: [
-        {
-          title: "La marge cash de chaque voyage et camion",
-          text: "Encaissements moins coûts validés, avec coûts en attente et soldes impayés affichés à côté.",
-        },
-        {
-          title: "Des dépenses qui ne s'échappent plus",
-          text: "Le chauffeur envoie chaque reçu par WhatsApp ; l'exploitation valide ; rien ne compte avant.",
-        },
-        {
-          title: "Savoir qui vous doit",
-          text: "Chaque paiement payé, en attente ou en retard, par client et par voyage.",
-        },
-        {
-          title: "Un contrat partagé, pas un fil WhatsApp",
-          text: "Lié au client, au trajet et au camion, signé en ligne, suivi jusqu'à la clôture.",
         },
       ],
     },

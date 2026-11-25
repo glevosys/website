@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Demo from "../components/GlevoTrace/Demo";
 import Hero from "../components/GlevoTrace/Hero";
 import Pilot from "../components/GlevoTrace/Pilot";
-import { Problem, Promises, Strengths, WhatsApp } from "../components/GlevoTrace/Sections";
+import { Problem, Strengths, WhatsApp } from "../components/GlevoTrace/Sections";
 import TraceFooter from "../components/GlevoTrace/TraceFooter";
 import TraceHeader from "../components/GlevoTrace/TraceHeader";
 import Videos from "../components/GlevoTrace/Videos";
@@ -31,7 +31,6 @@ const GlevoTrace = () => {
         <Strengths />
         <Problem />
         <Videos />
-        <Promises />
         <Demo />
         <WhatsApp />
         <Pilot />

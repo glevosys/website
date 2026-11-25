@@ -183,7 +183,6 @@ const en = {
       problem: "The problem",
       how: "How it works",
       whatsapp: "WhatsApp",
-      pilot: "Pilot offer",
       cta: "Start a pilot",
     },
     hero: {
@@ -209,9 +208,7 @@ const en = {
     },
     strengths: [
       "In French and in CFA francs",
-      "Connected to WhatsApp",
       "No hardware to install",
-      "No truck limit",
       "Team trained by GlevoSys",
     ],
     videos: {
@@ -219,10 +216,9 @@ const en = {
       description:
         "See how GlevoTrace helps you follow your trips, expenses and payments.",
       primaryTitle: "GlevoTrace introduction",
-      additionalLabel: "Watch another demonstration",
+      additionalLabel: "Watch product demo",
       additionalTitle: "Additional GlevoTrace demonstration",
       watchOnYouTube: "Watch on YouTube",
-      interactiveLink: "Explore the interactive demo",
     },
     problem: {
       badge: "The problem",
@@ -231,41 +227,24 @@ const en = {
         "Most transporters know where their trucks are, but not which trips made money.",
       items: [
         {
+          id: "agreements" as const,
           title: "Agreements",
           text: "On paper or in WhatsApp threads: price, route and advance remain disputable.",
         },
         {
+          id: "expenses" as const,
           title: "Expenses",
           text: "Fuel, tolls and fees arrive late or without receipts, and are rarely validated.",
         },
         {
+          id: "payments" as const,
           title: "Payments",
           text: "Advances and deposits blur what is invoiced, collected and still owed.",
         },
         {
+          id: "margin" as const,
           title: "Margin",
           text: "Known at month-end at best: too late to fix a route or a slow-paying customer.",
-        },
-      ],
-    },
-    promises: {
-      title: "Our four promises",
-      items: [
-        {
-          title: "The cash margin of every trip and truck",
-          text: "Collections minus validated costs, with pending costs and unpaid balances shown alongside.",
-        },
-        {
-          title: "Expenses that no longer slip away",
-          text: "The driver sends every receipt via WhatsApp; operations validates; nothing counts before that.",
-        },
-        {
-          title: "Know who owes you",
-          text: "Every payment paid, pending or overdue, by customer and by trip.",
-        },
-        {
-          title: "A shared contract, not a WhatsApp thread",
-          text: "Linked to the customer, route and truck, signed online, tracked until closing.",
         },
       ],
     },
