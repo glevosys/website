@@ -29,8 +29,8 @@ const GlevoTrace = () => {
       <main>
         <Hero />
         <Strengths />
-        <Videos />
         <Problem />
+        <Videos />
         <Promises />
         <Demo />
         <WhatsApp />

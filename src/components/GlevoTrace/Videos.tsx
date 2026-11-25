@@ -46,8 +46,8 @@ const Videos = () => {
 
   return (
     <section id="presentation" className="scroll-mt-20 bg-white py-16 md:py-20">
-      <div className="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-[0.85fr_1.15fr] gap-8 lg:gap-16">
-        <div className="max-w-lg lg:pt-4">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-[40px] leading-tight font-bold text-[#0B1020] tracking-tight">
             {video.title}
           </h2>
@@ -60,7 +60,7 @@ const Videos = () => {
             <FiArrowRight aria-hidden="true" />
           </a>
         </div>
-        <div>
+        <div className="mt-8">
           <YouTubeVideo
             id={introductionId}
             title={video.primaryTitle}
