@@ -1,238 +1,127 @@
 import { motion } from "framer-motion";
-import { Button } from "../ui/Button";
+import { FiArrowRight } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageContext";
-import africanMotifs from "../../assets/pictures/african-motifs.png";
+
+const center = { x: 220, y: 190 };
+const nodes = [
+  { x: 80, y: 80, amber: false, label: { left: "4%", top: "8%" }, float: "gs-float" },
+  { x: 360, y: 100, amber: false, label: { right: "0%", top: "14%" }, float: "gs-float-2" },
+  { x: 330, y: 310, amber: true, label: { right: "4%", bottom: "12%" }, float: "gs-float-3" },
+  { x: 100, y: 300, amber: false, label: { left: "0%", bottom: "16%" }, float: "gs-float-2" },
+];
+
+const NetworkVisual = ({ labels }: { labels: string[] }) => (
+  <div className="relative w-full max-w-[440px] mx-auto aspect-[440/400]" aria-hidden="true">
+    <svg viewBox="0 0 440 400" className="absolute inset-0 w-full h-full">
+      {nodes.map((n, i) => (
+        <line
+          key={`l-${i}`}
+          x1={center.x}
+          y1={center.y}
+          x2={n.x}
+          y2={n.y}
+          stroke="#3B4AE0"
+          strokeWidth="1.5"
+          className="gs-flow"
+        />
+      ))}
+      <line x1={80} y1={80} x2={360} y2={100} stroke="#222B55" strokeWidth="1" />
+      <line x1={100} y1={300} x2={330} y2={310} stroke="#222B55" strokeWidth="1" />
+      {nodes.map((n, i) => (
+        <g key={`n-${i}`}>
+          <circle
+            cx={n.x}
+            cy={n.y}
+            r="9"
+            fill={n.amber ? "#F5A524" : "#6E7BFF"}
+            className={i % 2 ? "gs-pulse-2" : "gs-pulse"}
+          />
+          <circle cx={n.x} cy={n.y} r="7" fill={n.amber ? "#F5A524" : "#6E7BFF"} />
+        </g>
+      ))}
+      <circle cx={center.x} cy={center.y} r="40" fill="#0015CC" opacity="0.25" className="gs-pulse" />
+      <circle cx={center.x} cy={center.y} r="30" fill="#0015CC" />
+      <text
+        x={center.x}
+        y={center.y + 5}
+        textAnchor="middle"
+        fill="#FFFFFF"
+        fontSize="14"
+        fontWeight="700"
+      >
+        GS
+      </text>
+    </svg>
+    {nodes.map((n, i) => (
+      <span
+        key={`label-${i}`}
+        style={n.label}
+        className={`absolute ${n.float} rounded-lg bg-white text-[#0B1020] text-xs sm:text-[13px] font-semibold px-3 py-1.5 shadow-lg whitespace-nowrap`}
+      >
+        {labels[i]}
+      </span>
+    ))}
+  </div>
+);
 
 const Intro = () => {
   const { t } = useLanguage();
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 1,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-  };
-
-  const buttonVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.3,
-        ease: [0.22, 1, 0.36, 1] as const,
-      },
-    },
-    tap: {
-      scale: 0.95,
-    },
-  };
-
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-white via-blue-50/30 to-white py-20 lg:py-32">
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <motion.div
-          className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl"
-          animate={{
-            y: [0, -30, 0],
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: [0.22, 1, 0.36, 1] as const,
-          }}
-        />
-        <motion.div
-          className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 rounded-full blur-3xl"
-          animate={{
-            y: [0, 30, 0],
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1,
-          }}
-        />
-        <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.3, 1],
-            rotate: [0, 180, 360],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <div
-          className="absolute inset-0 opacity-[0.28]"
-          style={{
-            backgroundImage: `url(${africanMotifs})`,
-            backgroundSize: "600px auto",
-            backgroundRepeat: "repeat",
-            backgroundPosition: "center",
-          }}
-        />
-      </div>
-      <motion.div
-        className="container relative z-10 mx-auto px-4"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
+    <section className="relative overflow-hidden bg-[#070B1F] text-white">
+      <div className="absolute inset-0 gs-dots gs-fade-b opacity-70" />
+      <svg
+        className="absolute -top-40 -right-40 w-[560px] h-[560px] opacity-40 pointer-events-none"
+        viewBox="0 0 560 560"
+        aria-hidden="true"
       >
-        <div className="flex flex-col items-center justify-center">
-          <motion.h1
-            className="max-w-4xl text-center text-5xl font-extrabold tracking-tight text-black md:text-6xl lg:text-7xl"
-            variants={titleVariants}
-          >
-            <motion.span
-              className="inline-block"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              {t.intro.title1}{" "}
-            </motion.span>
-            <br className="hidden md:block" />
-            <motion.span
-              className="inline-block bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 bg-clip-text text-transparent pb-4"
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {t.intro.title2}
-            </motion.span>
-            <motion.div
-              className="mx-auto mt-4 h-1 w-32 rounded-full bg-gradient-to-r from-blue-600 to-purple-600"
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: 128, opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            />
-          </motion.h1>
-          <motion.p
-            className="mt-6 max-w-2xl text-center text-lg leading-relaxed text-gray-600 md:text-xl"
-            variants={itemVariants}
-          >
+        <g className="gs-spin" fill="none" stroke="#3B4AE0" strokeWidth="1">
+          <circle cx="280" cy="280" r="270" strokeDasharray="4 10" />
+          <circle cx="280" cy="280" r="200" />
+          <circle cx="280" cy="280" r="130" strokeDasharray="2 8" />
+        </g>
+      </svg>
+
+      <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-24 grid lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <p className="text-[13px] font-semibold uppercase tracking-[1px] text-[#FFD27A] mb-5">
+            {t.intro.eyebrow}
+          </p>
+          <h1 className="text-[34px] sm:text-[44px] lg:text-[52px] leading-[1.12] tracking-[-1.5px] font-bold">
+            {t.intro.title}
+          </h1>
+          <p className="mt-6 text-lg text-[#C2C7DE] max-w-xl leading-relaxed">
             {t.intro.description}
-          </motion.p>
-          <motion.div
-            className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:gap-6"
-            variants={itemVariants}
-          >
-            <motion.a
+          </p>
+          <div className="mt-9 flex flex-col sm:flex-row gap-3">
+            <a
               href="#contact"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#0015CC] hover:bg-[#000E8A] px-6 py-3.5 font-semibold transition-colors"
             >
-              <Button className="h-14 rounded-full bg-blue-700 px-10 text-lg font-medium hover:bg-blue-800 transition-all shadow-lg shadow-blue-700/30 hover:shadow-xl hover:shadow-blue-700/40 group">
-                <span className="flex items-center gap-2">
-                  {t.intro.ctaExpert}
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{
-                      duration: 1.5,
-                      repeat: Infinity,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-              </Button>
-            </motion.a>
-            <motion.a
+              {t.intro.ctaPrimary}
+              <FiArrowRight />
+            </a>
+            <a
               href="#solution"
-              variants={buttonVariants}
-              whileHover="hover"
-              whileTap="tap"
+              className="inline-flex items-center justify-center rounded-xl border border-[#3A4260] hover:border-white px-6 py-3.5 font-semibold transition-colors"
             >
-              <Button
-                variant="secondary"
-                className="h-14 rounded-full border-gray-200 bg-white px-10 text-lg font-medium text-black hover:bg-gray-50 transition-all shadow-md hover:shadow-lg"
-              >
-                {t.intro.ctaSolutions}
-              </Button>
-            </motion.a>
-          </motion.div>
-          <motion.div
-            className="mt-20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-          >
-            <motion.div
-              className="flex flex-col items-center gap-2 text-gray-400 cursor-pointer hover:text-gray-600 transition-colors"
-              animate={{ y: [0, 10, 0] }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            >
-              <span className="text-xs font-medium uppercase tracking-wider">
-                {t.intro.scroll}
-              </span>
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                />
-              </svg>
-            </motion.div>
-          </motion.div>
-        </div>
-      </motion.div>
+              {t.intro.ctaSolutions}
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+        >
+          <NetworkVisual labels={t.intro.nodes} />
+        </motion.div>
+      </div>
     </section>
   );
 };

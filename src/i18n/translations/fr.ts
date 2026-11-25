@@ -3,48 +3,30 @@ const fr = {
     about: "Qui sommes-nous ?",
     solutions: "Nos solutions",
     mission: "Mission",
-    domain: "Domaine",
-    contact: "Contact",
+    domain: "Domaines",
+    contact: "Contactez-nous",
+    glevotrace: "GlevoTrace",
+    newBadge: "Nouveau",
   },
   header: {
-    tagline: "Du code à la croissance.",
-    copyright: "© 2026 Glevosys",
+    tagline: "Du code à la croissance",
+    copyright: "© 2026 GlevoSys",
   },
   intro: {
-    title1: "Du code à la",
-    title2: "croissance",
+    eyebrow: "Cloud · Data · IA · Cybersécurité · Formation",
+    title:
+      "Nous accélérons la transition des entreprises africaines vers le cloud, la data, l'IA et la sécurité.",
     description:
-      "Glevosys accompagne les entreprises africaines dans leur transformation numérique par l'intégration des solutions cloud et IA, le développement d'agents logiciels et la montée en compétence des équipes.",
-    ctaExpert: "Parler à un expert",
+      "De la stratégie à la production, jusqu'aux compétences de vos équipes : un seul partenaire, responsable du résultat.",
+    ctaPrimary: "Parlons de votre projet",
     ctaSolutions: "Découvrir nos solutions",
-    scroll: "Scroll",
-  },
-  innovation: {
-    slides: [
-      {
-        title: "Innovation pragmatique",
-        description:
-          "Nous intégrons l'IA et l'automatisation là où elles apportent un réel impact business.",
-      },
-      {
-        title: "Expertise Technique",
-        description:
-          "Des solutions sur mesure pour répondre à vos défis technologiques les plus complexes.",
-      },
-      {
-        title: "Impact Business",
-        description:
-          "Prioriser la valeur métier pour garantir un retour sur investissement rapide.",
-      },
-    ],
-    of: "de",
-    cta: "Parler à un expert",
+    nodes: ["Cloud & DevOps", "Data & IA", "Cybersécurité", "Formation"],
   },
   about: {
-    badge: "Glevosys",
+    badge: "GlevoSys",
     heading: "Qui sommes-nous ?",
+    founders: "Fondée par trois anciens ingénieurs de Microsoft et de GitHub.",
     description: [
-      "Fondée par trois anciens ingénieurs de Microsoft et de GitHub.",
       "GlevoSys est une entreprise technologique spécialisée dans la transformation numérique des grandes organisations africaines.",
       "Inspirée par l'héritage des leaders visionnaires du continent, notre mission est de concevoir, intégrer et sécuriser des solutions numériques à forte valeur ajoutée, allant du cloud et de l'intelligence artificielle au développement d'applications et à la cybersécurité.",
       "Nous accompagnons les entreprises dans la modernisation de leurs systèmes, l'optimisation de leurs performances et la montée en compétences de leurs équipes.",
@@ -56,7 +38,7 @@ const fr = {
     badge: "Ce que nous offrons",
     title: "Nos solutions",
     subtitle:
-      "Des solutions complètes pour accompagner votre transformation numérique",
+      "Des solutions complètes pour accompagner votre transformation numérique.",
     cta: "Parler à un expert",
     cards: [
       {
@@ -88,7 +70,7 @@ const fr = {
         content: [
           "Agents IA pour automatisation des processus",
           "Analyse de données et aide à la décision",
-          "IA appliquée aux métiers (support, opérations,...)",
+          "IA appliquée aux métiers (support, opérations…)",
         ],
       },
       {
@@ -99,16 +81,27 @@ const fr = {
           "Accompagnement à long terme",
         ],
       },
-      {
-        title: "Et bien plus...",
-      },
     ],
+    more: {
+      title: "Et bien plus…",
+      description:
+        "Data & BI, logiciels et canaux digitaux (ERP, mobile money, WhatsApp), et des parcours de formation pour vos équipes.",
+      cta: "Parlons de votre besoin",
+    },
+    product: {
+      badge: "Notre produit",
+      tag: "Transport & logistique",
+      title: "GlevoTrace",
+      description:
+        "Contrats, voyages, dépenses de route et paiements clients dans une seule application : la marge cash de chaque voyage et camion, et chaque solde impayé.",
+      cta: "Découvrir GlevoTrace",
+    },
   },
   mission: {
     badge: "Notre ambition",
-    line1: "Accompagner",
-    line2: "300 entreprises africaines",
-    line3: "dans leur transformation numérique d'ici 2030",
+    titleStart: "Accompagner ",
+    highlight: "300 entreprises africaines",
+    titleEnd: " dans leur transformation numérique d'ici 2030.",
     goal: "Objectif 2030",
   },
   domain: {
@@ -141,32 +134,63 @@ const fr = {
       },
     ],
   },
+  why: {
+    badge: "Pourquoi GlevoSys",
+    title: "Fondée par d'anciens ingénieurs de Microsoft et de GitHub.",
+    reasons: [
+      {
+        strong: "Pensé pour le terrain africain",
+        text: " : connectivité, budgets, mobile money.",
+      },
+      { strong: "Sécurité par défaut", text: " sur chaque projet." },
+      {
+        strong: "Transfert de compétences inclus",
+        text: " : vos équipes deviennent autonomes.",
+      },
+      {
+        strong: "Indépendants des éditeurs",
+        text: " : Google Cloud, Azure, AWS, GitHub ou open source, selon votre contexte.",
+      },
+    ],
+    sectorsTitle: "Secteurs que nous adressons",
+    sectors: [
+      "Banque & assurance",
+      "Télécoms",
+      "Secteur public",
+      "Énergie & mines",
+      "Distribution",
+      "Transport & logistique",
+      "Agro-industrie",
+      "Santé",
+    ],
+    location: "Basés à Yaoundé, Cameroun",
+  },
   contact: {
     badge: "Contactez-nous",
-    headingStart: "Contactez-nous ",
-    headingMiddle:
-      "pour discuter de vos besoins en transformation numérique et découvrir comment ",
-    headingEnd: "peut vous accompagner.",
-    emailLabel: "Email",
-    phoneLabel: "Téléphone",
-    locationLabel: "Localisation",
+    title: "Parlons de vos projets cloud, data, IA et sécurité.",
+    emailLabel: "E-mail",
+    phoneLabel: "Téléphone / WhatsApp",
+    locationLabel: "Siège",
+    location: "Yaoundé, Cameroun",
     form: {
-      nameLabel: "Votre nom",
-      namePlaceholder: "Insérer votre nom complet",
-      companyLabel: "Votre entreprise",
+      nameLabel: "Nom complet",
+      namePlaceholder: "Votre nom",
+      companyLabel: "Entreprise",
       companyPlaceholder: "Orange, MTN, ...",
-      emailLabel: "Votre Email",
+      emailLabel: "E-mail professionnel",
+      emailPlaceholder: "vous@entreprise.com",
       serviceLabel: "Sur quoi souhaitez-vous travailler en priorité ?",
-      servicePlaceholder: "Veillez renseigner le service en particulier",
+      servicePlaceholder: "Veuillez sélectionner un service",
       serviceWeb: "Développement Web/App",
       serviceAI: "Intelligence artificielle",
       serviceSecurity: "Sécurité informatique",
       serviceNetwork: "Architecture réseaux & cloud",
       serviceTraining: "Formation & montée en compétences",
-      messageLabel: "Un mot pour nous en dire plus ?",
+      serviceGlevotrace: "GlevoTrace (transport)",
+      messageLabel: "Votre projet",
       messageOptional: "(optionnel)",
-      messagePlaceholder: "Décrivez brièvement votre contexte ou votre idée...",
-      submit: "Entrer en contact",
+      messagePlaceholder: "Décrivez brièvement votre contexte ou votre idée…",
+      submit: "Envoyer",
     },
   },
   footer: {
@@ -184,6 +208,220 @@ const fr = {
     ],
     contactTitle: "Contact",
     careers: "Carrières",
+    glevotrace: "GlevoTrace",
+    product: "Produit",
+  },
+  glevotrace: {
+    meta: "GlevoTrace — Pilotage des voyages et de la trésorerie",
+    byline: "un produit de",
+    nav: {
+      problem: "Le problème",
+      how: "Comment ça marche",
+      whatsapp: "WhatsApp",
+      pilot: "Offre pilote",
+      cta: "Démarrer un pilote",
+    },
+    hero: {
+      eyebrow: "Pour les transporteurs au Cameroun",
+      title:
+        "Sachez ce que chaque voyage vous rapporte, et ce qu'on vous doit encore.",
+      description:
+        "Contrats, voyages, dépenses de route et paiements clients dans une seule application : la marge cash de chaque voyage et camion, et chaque solde impayé.",
+      ctaPrimary: "Racontez-nous votre dernier voyage",
+      ctaSecondary: "Voir comment ça marche",
+      card: {
+        route: "Douala → Garoua",
+        sub: "Camion LT 245 AB · Voyage n° 0412",
+        rows: [
+          { label: "Encaissé", value: "1 300 000 F" },
+          { label: "Coûts validés", value: "788 000 F" },
+          { label: "Coûts à vérifier", value: "25 000 F" },
+          { label: "Solde client à encaisser", value: "500 000 F" },
+        ],
+        marginLabel: "Marge cash",
+        marginValue: "512 000 F",
+        note: "Exemple illustratif, données fictives.",
+      },
+    },
+    strengths: [
+      "En français et en F CFA",
+      "Connecté à WhatsApp",
+      "Aucun matériel à installer",
+      "Aucune limite de camions",
+      "Équipe formée par GlevoSys",
+    ],
+    problem: {
+      badge: "Le problème",
+      title: "Vos camions roulent. Et votre trésorerie ?",
+      subtitle:
+        "La plupart des transporteurs savent où sont leurs camions, mais pas quels voyages ont rapporté.",
+      items: [
+        {
+          title: "Les accords",
+          text: "Sur papier ou dans des fils WhatsApp : prix, trajet et avance restent contestables.",
+        },
+        {
+          title: "Les dépenses",
+          text: "Carburant, péages et frais arrivent tard ou sans reçu, rarement validés.",
+        },
+        {
+          title: "Les paiements",
+          text: "Avances et acomptes brouillent ce qui est facturé, encaissé et encore dû.",
+        },
+        {
+          title: "La marge",
+          text: "Connue en fin de mois au mieux : trop tard pour corriger un trajet ou un client lent.",
+        },
+      ],
+    },
+    promises: {
+      title: "Nos quatre promesses",
+      items: [
+        {
+          title: "La marge cash de chaque voyage et camion",
+          text: "Encaissements moins coûts validés, avec coûts en attente et soldes impayés affichés à côté.",
+        },
+        {
+          title: "Des dépenses qui ne s'échappent plus",
+          text: "Le chauffeur envoie chaque reçu par WhatsApp ; l'exploitation valide ; rien ne compte avant.",
+        },
+        {
+          title: "Savoir qui vous doit",
+          text: "Chaque paiement payé, en attente ou en retard, par client et par voyage.",
+        },
+        {
+          title: "Un contrat partagé, pas un fil WhatsApp",
+          text: "Lié au client, au trajet et au camion, signé en ligne, suivi jusqu'à la clôture.",
+        },
+      ],
+    },
+    demo: {
+      badge: "Comment ça marche",
+      title: "Du contrat au paiement, en 4 étapes.",
+      hint: "Cliquez sur une étape pour l'afficher.",
+      marginLabel: "Marge cash",
+      marginValue: "512 000 F",
+      note: "Écran illustratif, données fictives.",
+      steps: [
+        {
+          title: "Créer le contrat",
+          desc: "Client, trajet, prix et avance, partagés et signés en ligne avec le client.",
+          panel: {
+            title: "Nouveau contrat",
+            sub: "Négoce Exemple SARL",
+            button: "Partager au client",
+            rows: [
+              { label: "Trajet", value: "Douala → Garoua", status: "", tone: "" },
+              { label: "Prix convenu", value: "1 800 000 F", status: "", tone: "" },
+              { label: "Avance", value: "900 000 F", status: "Reçue", tone: "ok" },
+              { label: "Signature", value: "Client et transporteur", status: "Signé", tone: "ok" },
+            ],
+          },
+        },
+        {
+          title: "Lancer le voyage",
+          desc: "L'exploitation affecte le camion et le chauffeur ; le voyage est suivi jusqu'à la livraison.",
+          panel: {
+            title: "Voyage n° 0412",
+            sub: "Douala → Garoua · départ le 12/11",
+            button: "Marquer livré",
+            rows: [
+              { label: "Camion", value: "LT 245 AB", status: "Affecté", tone: "ok" },
+              { label: "Chauffeur", value: "Paul M.", status: "Affecté", tone: "ok" },
+              { label: "Statut", value: "En route", status: "Jour 2", tone: "info" },
+              { label: "Livraison prévue", value: "15/11", status: "", tone: "" },
+            ],
+          },
+        },
+        {
+          title: "Saisir les dépenses",
+          desc: "Le chauffeur envoie la photo du reçu par WhatsApp ; l'exploitation valide avant que la dépense compte.",
+          panel: {
+            title: "Dépenses du voyage",
+            sub: "Voyage n° 0412",
+            button: "+ Ajouter une dépense",
+            rows: [
+              { label: "Carburant", value: "620 000 F", status: "Validé", tone: "ok" },
+              { label: "Péages", value: "48 000 F", status: "Validé", tone: "ok" },
+              { label: "Prime chauffeur", value: "120 000 F", status: "Validé", tone: "ok" },
+              { label: "Frais de route", value: "25 000 F", status: "Sans reçu", tone: "warn" },
+            ],
+          },
+        },
+        {
+          title: "Encaisser et voir la marge",
+          desc: "Marge cash et solde à encaisser apparaissent aussitôt ; le client reçoit sa relance sur WhatsApp.",
+          panel: {
+            title: "Bilan du voyage",
+            sub: "Douala → Garoua · LT 245 AB",
+            button: "",
+            rows: [
+              { label: "Encaissé", value: "1 300 000 F", status: "Reçu", tone: "ok" },
+              { label: "Coûts validés", value: "788 000 F", status: "", tone: "" },
+              { label: "Coûts en attente", value: "25 000 F", status: "À vérifier", tone: "warn" },
+              { label: "Solde client", value: "500 000 F", status: "À encaisser", tone: "info" },
+            ],
+          },
+        },
+      ],
+    },
+    whatsapp: {
+      assistant: "Assistant GlevoTrace",
+      online: "en ligne",
+      chat: [
+        { from: "driver", title: "Photo du reçu", text: "Carburant 620 000 F, voyage 0412" },
+        { from: "bot", title: "", text: "Dépense ajoutée au voyage Douala → Garoua. En attente de validation." },
+        { from: "driver", title: "", text: "Livré à Garoua" },
+        { from: "bot", title: "", text: "Voyage marqué livré. Le propriétaire et le client sont prévenus." },
+      ],
+      badge: "Connecté à WhatsApp",
+      title: "Votre équipe garde l'outil qu'elle utilise déjà.",
+      points: [
+        { strong: "Chauffeurs :", text: " une photo et un montant, et la dépense arrive sur le bon voyage." },
+        { strong: "Clients :", text: " relances de paiement automatiques, avec le solde à jour." },
+        { strong: "Propriétaire :", text: " livraison, reçu manquant, paiement reçu : l'alerte au bon moment." },
+      ],
+      rolesTitle: "Un seul registre, quatre rôles",
+      roles: [
+        { role: "Chauffeur", action: "Envoie ses reçus" },
+        { role: "Exploitation", action: "Valide les dépenses" },
+        { role: "Trésorerie", action: "Suit les paiements" },
+        { role: "Propriétaire", action: "Voit la marge" },
+      ],
+    },
+    pilot: {
+      badge: "Offre pilote",
+      title: "Démarrez avec un pilote accompagné de 30 jours.",
+      stats: [
+        { value: "30", label: "jours" },
+        { value: "1–3", label: "camions" },
+        { value: "1", label: "cycle complet" },
+      ],
+      included:
+        "Paramétrage, formation et appui inclus. Prix ou période gratuite convenus par écrit avant le démarrage.",
+      contactTitle: "Contact",
+      phoneLabel: "Téléphone / WhatsApp :",
+      emailLabel: "E-mail :",
+      location: "GlevoSys · Yaoundé, Cameroun",
+      formTitle: "Racontez-nous votre dernier voyage",
+      formSubtitle:
+        "Nous vous montrons ce que GlevoTrace aurait changé, puis nous définissons ensemble votre pilote.",
+      form: {
+        name: "Nom",
+        company: "Société",
+        whatsapp: "Numéro WhatsApp",
+        whatsappPlaceholder: "+237 ...",
+        trucks: "Nombre de camions",
+        lastTrip: "Votre dernier voyage",
+        lastTripPlaceholder: "Trajet, prix convenu, avance, principales dépenses...",
+        submit: "Planifier un pilote",
+        subject: "Demande de pilote GlevoTrace",
+      },
+    },
+    footer: {
+      productOf: "GlevoTrace est un produit de",
+      backHome: "Retour à GlevoSys",
+    },
   },
   careers: {
     badge: "Carrières",
