@@ -217,7 +217,7 @@ const fr = {
       "Équipe formée par GlevoSys",
     ],
     videos: {
-      title: "Découvrez GlevoTrace en vidéo",
+      title: "GlevoTrace en video",
       description:
         "Découvrez comment GlevoTrace vous aide à suivre vos voyages, vos dépenses et vos paiements.",
       primaryTitle: "Présentation de GlevoTrace",
