@@ -3,31 +3,15 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Medium.ttf") format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Bold.ttf") format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Poppins";
-  src: url("/src/assets/fonts/Poppins-Light.ttf") format("truetype");
-  font-weight: 300;
+  font-family: "IBM Plex Sans";
+  src: url("./assets/fonts/IBMPlexSans-latin-variable.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
 }
 
 @keyframes scroll {
@@ -41,4 +25,119 @@ body {
 
 .animate-scroll {
   animation: scroll 25s linear infinite;
+}
+
+/* Shared flat-style decorations (homepage + GlevoTrace) */
+.gs-dots {
+  background-image: radial-gradient(#283463 1.3px, transparent 1.3px);
+  background-size: 28px 28px;
+}
+.gs-dots-light {
+  background-image: radial-gradient(#c9cff0 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+}
+.gs-grid {
+  background-image: linear-gradient(#e9ebf3 1px, transparent 1px),
+    linear-gradient(90deg, #e9ebf3 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+.gs-fade-b {
+  -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+  mask-image: linear-gradient(180deg, #000, transparent);
+}
+.gs-float {
+  animation: gsFloat 6s ease-in-out infinite;
+}
+.gs-float-2 {
+  animation: gsFloat 7s ease-in-out -2s infinite;
+}
+.gs-float-3 {
+  animation: gsFloat 8s ease-in-out -4s infinite;
+}
+.gs-pulse,
+.gs-pulse-2 {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gsPulse 2.6s ease-out infinite;
+}
+.gs-pulse-2 {
+  animation-delay: -1.3s;
+}
+.gs-flow {
+  stroke-dasharray: 6 8;
+  animation: gsFlow 2.2s linear infinite;
+}
+.gs-spin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: gsSpin 60s linear infinite;
+}
+.gs-marquee {
+  display: flex;
+  width: max-content;
+  animation: scroll 32s linear infinite;
+}
+.gt-road {
+  animation: gtRoad 1.2s linear infinite;
+}
+.gt-truck {
+  animation: gtBob 2.4s ease-in-out infinite;
+}
+@keyframes gsFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes gsPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+@keyframes gsFlow {
+  to {
+    stroke-dashoffset: -28;
+  }
+}
+@keyframes gsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes gtRoad {
+  to {
+    stroke-dashoffset: -52;
+  }
+}
+@keyframes gtBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gs-float,
+  .gs-float-2,
+  .gs-float-3,
+  .gs-pulse,
+  .gs-pulse-2,
+  .gs-flow,
+  .gs-spin,
+  .gs-marquee,
+  .animate-scroll,
+  .gt-road,
+  .gt-truck {
+    animation: none;
+  }
 }

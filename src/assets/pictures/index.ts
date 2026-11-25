@@ -1,5 +1,6 @@
 import logo from "./logo.png";
 import logowhite from "./logowhite.png";
+import glevotraceLogo from "./glevotrace-logo.png";
 import aws from "./aws.png";
 import azure from "./azure.png";
 import github from "./github.png";
@@ -8,9 +9,6 @@ import googlecloud from "./googlecloud.png";
 import c2 from "./c2.webp";
 import c4 from "./c4.webp";
 // HD photos from Unsplash (free for commercial use, no attribution required):
-// slide-innovation   https://unsplash.com/photos/qY-XlCf9Zs4
-// slide-expertise    https://unsplash.com/photos/kQIdjLbCghA
-// slide-impact       https://unsplash.com/photos/YDEiseFR_Q8
 // domain-devsecops   https://unsplash.com/photos/842ofHC6MaI
 // domain-development https://unsplash.com/photos/IgUR1iX0mqM
 // domain-training    https://unsplash.com/photos/MDcaad-_hv0
@@ -19,9 +17,6 @@ import c4 from "./c4.webp";
 // solution-security  https://unsplash.com/photos/-nBClEqKKVM
 // solution-training  https://unsplash.com/photos/lKxSeXSrKlM
 // solution-more      https://unsplash.com/photos/hpjSkU2UYSU
-import slideInnovation from "./slide-innovation.webp";
-import slideExpertise from "./slide-expertise.webp";
-import slideImpact from "./slide-impact.webp";
 import domainDevsecops from "./domain-devsecops.webp";
 import domainDevelopment from "./domain-development.webp";
 import domainTraining from "./domain-training.webp";
@@ -46,6 +41,7 @@ const images = {
   gh,
   logo,
   logowhite,
+  glevotraceLogo,
   aws,
   azure,
   github,
@@ -53,9 +49,6 @@ const images = {
   googlecloud,
   c2,
   c4,
-  slideInnovation,
-  slideExpertise,
-  slideImpact,
   domainDevsecops,
   domainDevelopment,
   domainTraining,

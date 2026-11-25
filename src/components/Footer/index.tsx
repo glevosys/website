@@ -14,11 +14,12 @@ const Footer = () => {
     { title: t.nav.mission, to: "/#mission" },
     { title: t.nav.domain, to: "/#domaine" },
     { title: t.nav.contact, to: "/#contact" },
+    { title: t.footer.glevotrace, to: "/glevotrace" },
     { title: t.footer.careers, to: "/careers" },
   ];
 
   return (
-    <footer className="bg-[#050B44] py-16 text-white/80">
+    <footer className="bg-[#070B1F] py-16 text-white/80">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-12">
           <div className="md:col-span-2 lg:col-span-4 space-y-6">
@@ -67,6 +68,14 @@ const Footer = () => {
               {t.footer.solutionsTitle}
             </h4>
             <ul className="space-y-3">
+              <li>
+                <Link to="/glevotrace" className="inline-flex items-center gap-2 text-white hover:text-[#FFD27A] transition-colors">
+                  {t.footer.glevotrace}
+                  <span className="rounded-full bg-[#F5A524] text-[#0B1020] text-[10px] font-semibold uppercase px-2 py-0.5">
+                    {t.footer.product}
+                  </span>
+                </Link>
+              </li>
               {t.footer.solutions.map((item) => (
                 <li key={item}>
                   <Link to="/#solution" className={linkClass}>

@@ -3,45 +3,27 @@ const en = {
     about: "Who are we?",
     solutions: "Our solutions",
     mission: "Mission",
-    domain: "Domain",
-    contact: "Contact",
+    domain: "Domains",
+    contact: "Contact us",
+    glevotrace: "GlevoTrace",
+    newBadge: "New",
   },
   header: {
-    tagline: "From code to growth.",
-    copyright: "© 2026 Glevosys",
+    tagline: "From code to growth",
+    copyright: "© 2026 GlevoSys",
   },
   intro: {
-    title1: "From code to",
-    title2: "growth",
+    eyebrow: "Cloud · Data · AI · Cybersecurity · Training",
+    title:
+      "We accelerate African companies' transition to cloud, data, AI and security.",
     description:
-      "Glevosys supports African companies in their digital transformation through the integration of cloud and AI solutions, the development of software agents and the upskilling of teams.",
-    ctaExpert: "Talk to an expert",
+      "From strategy to production, all the way to your teams' skills: one partner, accountable for the outcome.",
+    ctaPrimary: "Let's talk about your project",
     ctaSolutions: "Discover our solutions",
-    scroll: "Scroll",
-  },
-  innovation: {
-    slides: [
-      {
-        title: "Pragmatic Innovation",
-        description:
-          "We integrate AI and automation where they deliver real business impact.",
-      },
-      {
-        title: "Technical Expertise",
-        description:
-          "Tailored solutions to address your most complex technological challenges.",
-      },
-      {
-        title: "Business Impact",
-        description:
-          "Prioritizing business value to ensure a fast return on investment.",
-      },
-    ],
-    of: "of",
-    cta: "Talk to an expert",
+    nodes: ["Cloud & DevOps", "Data & AI", "Cybersecurity", "Training"],
   },
   about: {
-    badge: "Glevosys",
+    badge: "GlevoSys",
     heading: "Who are we?",
     description: [
       "Founded by three former Microsoft and GitHub engineers.",
@@ -55,7 +37,7 @@ const en = {
   solution: {
     badge: "What we offer",
     title: "Our solutions",
-    subtitle: "Complete solutions to support your digital transformation",
+    subtitle: "Complete solutions to support your digital transformation.",
     cta: "Talk to an expert",
     cards: [
       {
@@ -63,7 +45,7 @@ const en = {
         content: [
           "Custom business applications",
           "Scalable web and mobile platforms",
-          "API and existing systems integration",
+          "API and legacy system integration",
         ],
       },
       {
@@ -77,37 +59,48 @@ const en = {
       {
         title: "Cybersecurity",
         content: [
-          "System audit and hardening",
+          "System audits and hardening",
           "Network and data security",
           "Best practices and compliance",
         ],
       },
       {
-        title: "Artificial intelligence & AI agents",
+        title: "Artificial Intelligence & AI Agents",
         content: [
           "AI agents for process automation",
           "Data analysis and decision support",
-          "AI applied to business (support, operations,...)",
+          "AI applied to business (support, operations…)",
         ],
       },
       {
-        title: "Training & upskilling",
+        title: "Training & Upskilling",
         content: [
           "Technical training for IT teams",
           "Cybersecurity and AI awareness",
           "Long-term support",
         ],
       },
-      {
-        title: "And much more...",
-      },
     ],
+    more: {
+      title: "And much more…",
+      description:
+        "Data & BI, software and digital channels (ERP, mobile money, WhatsApp), and learning paths for your teams.",
+      cta: "Let's talk about your needs",
+    },
+    product: {
+      badge: "Our product",
+      tag: "Transport & logistics",
+      title: "GlevoTrace",
+      description:
+        "Contracts, trips, road expenses and customer payments in a single app: the cash margin of every trip and truck, and every unpaid balance.",
+      cta: "Discover GlevoTrace",
+    },
   },
   mission: {
-    badge: "Our ambition",
-    line1: "Supporting",
-    line2: "300 African companies",
-    line3: "in their digital transformation by 2030",
+    badge: "Our mission",
+    titleStart: "Support ",
+    highlight: "300 African companies",
+    titleEnd: " in their digital transformation by 2030.",
     goal: "2030 goal",
   },
   domain: {
@@ -118,52 +111,51 @@ const en = {
       {
         title: "Consulting & Dev/DevSecOps",
         description: "Audit, integration, migration to GitHub / Azure / CI-CD.",
-        tags: ["Dev/DevSecOps Audit", "Cloud Migration", "CI/CD Security"],
+        tags: ["Dev/DevSecOps audit", "Cloud migration", "CI/CD security"],
       },
       {
         title: "Development & Integration",
         description: "Design of internal applications and AI agents.",
-        tags: ["Internal tools", "ChatGPT Agent", "Custom Copilot"],
+        tags: ["Internal tools", "ChatGPT agent", "Custom Copilot"],
       },
       {
-        title: "AI Training & Acculturation",
+        title: "AI Training & Adoption",
         description: "Corporate training on DevOps applied to development.",
-        tags: ["AI + Dev Workshops", "Team Training", "Technical Coaching"],
+        tags: ["AI + Dev workshops", "Team training", "Technical coaching"],
       },
       {
         title: "Cybersecurity & Data Protection",
-        description:
-          "Audit, security hardening and compliance of your information systems.",
-        tags: ["Security Audit", "Data Protection", "GDPR Compliance"],
+        description: "Audit, security and compliance of your information systems.",
+        tags: ["Security audit", "Data protection", "GDPR compliance"],
       },
     ],
   },
   contact: {
     badge: "Contact us",
-    headingStart: "Contact us ",
-    headingMiddle:
-      "to discuss your digital transformation needs and discover how ",
-    headingEnd: "can support you.",
+    title: "Let's talk about your cloud, data, AI and security projects.",
     emailLabel: "Email",
-    phoneLabel: "Phone",
-    locationLabel: "Location",
+    phoneLabel: "Phone / WhatsApp",
+    locationLabel: "Headquarters",
+    location: "Yaoundé, Cameroon",
     form: {
-      nameLabel: "Your name",
-      namePlaceholder: "Enter your full name",
-      companyLabel: "Your company",
+      nameLabel: "Full name",
+      namePlaceholder: "Your name",
+      companyLabel: "Company",
       companyPlaceholder: "Orange, MTN, ...",
-      emailLabel: "Your Email",
-      serviceLabel: "What do you want to work on first?",
+      emailLabel: "Work email",
+      emailPlaceholder: "you@company.com",
+      serviceLabel: "What would you like to work on first?",
       servicePlaceholder: "Please select a service",
       serviceWeb: "Web/App Development",
       serviceAI: "Artificial Intelligence",
       serviceSecurity: "Cybersecurity",
       serviceNetwork: "Network & Cloud Architecture",
       serviceTraining: "Training & Upskilling",
-      messageLabel: "A word to tell us more?",
+      serviceGlevotrace: "GlevoTrace (transport)",
+      messageLabel: "Your project",
       messageOptional: "(optional)",
-      messagePlaceholder: "Briefly describe your context or idea...",
-      submit: "Get in touch",
+      messagePlaceholder: "Briefly describe your context or idea…",
+      submit: "Send",
     },
   },
   footer: {
@@ -181,6 +173,207 @@ const en = {
     ],
     contactTitle: "Contact",
     careers: "Careers",
+    glevotrace: "GlevoTrace",
+    product: "Product",
+  },
+  glevotrace: {
+    meta: "GlevoTrace — Trip and cash-flow management",
+    byline: "a product of",
+    nav: {
+      problem: "The problem",
+      how: "How it works",
+      whatsapp: "WhatsApp",
+      cta: "Start a pilot",
+    },
+    hero: {
+      eyebrow: "For transporters in Cameroon",
+      title: "Know what every trip earns you, and what you're still owed.",
+      description:
+        "Contracts, trips, road expenses and customer payments in a single app: the cash margin of every trip and truck, and every unpaid balance.",
+      ctaPrimary: "Tell us about your last trip",
+      ctaSecondary: "See how it works",
+      card: {
+        route: "Douala → Garoua",
+        sub: "Truck LT 245 AB · Trip no. 0412",
+        rows: [
+          { label: "Collected", value: "1,300,000 F" },
+          { label: "Validated costs", value: "788,000 F" },
+          { label: "Costs to review", value: "25,000 F" },
+          { label: "Customer balance due", value: "500,000 F" },
+        ],
+        marginLabel: "Cash margin",
+        marginValue: "512,000 F",
+        note: "Illustrative example, fictitious data.",
+      },
+    },
+    strengths: [
+      "In French and in CFA francs",
+      "No hardware to install",
+      "Team trained by GlevoSys",
+    ],
+    videos: {
+      title: "Discover GlevoTrace in a short video",
+      description:
+        "See how GlevoTrace helps you follow your trips, expenses and payments.",
+      primaryTitle: "GlevoTrace introduction",
+      additionalLabel: "Watch product demo",
+      additionalTitle: "Additional GlevoTrace demonstration",
+    },
+    problem: {
+      badge: "The problem",
+      title: "Your trucks are moving. What about your cash?",
+      subtitle:
+        "Most transporters know where their trucks are, but not which trips made money.",
+      items: [
+        {
+          id: "agreements" as const,
+          title: "Agreements",
+          text: "On paper or in WhatsApp threads: price, route and advance remain disputable.",
+        },
+        {
+          id: "expenses" as const,
+          title: "Expenses",
+          text: "Fuel, tolls and fees arrive late or without receipts, and are rarely validated.",
+        },
+        {
+          id: "payments" as const,
+          title: "Payments",
+          text: "Advances and deposits blur what is invoiced, collected and still owed.",
+        },
+        {
+          id: "margin" as const,
+          title: "Margin",
+          text: "Known at month-end at best: too late to fix a route or a slow-paying customer.",
+        },
+      ],
+    },
+    demo: {
+      badge: "How it works",
+      title: "From contract to payment, in 4 steps.",
+      hint: "Click a step to display it.",
+      marginLabel: "Cash margin",
+      marginValue: "512,000 F",
+      note: "Illustrative screen, fictitious data.",
+      steps: [
+        {
+          title: "Create the contract",
+          desc: "Customer, route, price and advance, shared and signed online with the customer.",
+          panel: {
+            title: "New contract",
+            sub: "Négoce Exemple SARL",
+            button: "Share with customer",
+            rows: [
+              { label: "Route", value: "Douala → Garoua", status: "", tone: "" },
+              { label: "Agreed price", value: "1,800,000 F", status: "", tone: "" },
+              { label: "Advance", value: "900,000 F", status: "Received", tone: "ok" },
+              { label: "Signature", value: "Customer and transporter", status: "Signed", tone: "ok" },
+            ],
+          },
+        },
+        {
+          title: "Start the trip",
+          desc: "Operations assigns the truck and driver; the trip is tracked until delivery.",
+          panel: {
+            title: "Trip no. 0412",
+            sub: "Douala → Garoua · departs 12/11",
+            button: "Mark delivered",
+            rows: [
+              { label: "Truck", value: "LT 245 AB", status: "Assigned", tone: "ok" },
+              { label: "Driver", value: "Paul M.", status: "Assigned", tone: "ok" },
+              { label: "Status", value: "On the road", status: "Day 2", tone: "info" },
+              { label: "Expected delivery", value: "15/11", status: "", tone: "" },
+            ],
+          },
+        },
+        {
+          title: "Record expenses",
+          desc: "The driver sends a photo of the receipt via WhatsApp; operations validates before the expense counts.",
+          panel: {
+            title: "Trip expenses",
+            sub: "Trip no. 0412",
+            button: "+ Add an expense",
+            rows: [
+              { label: "Fuel", value: "620,000 F", status: "Validated", tone: "ok" },
+              { label: "Tolls", value: "48,000 F", status: "Validated", tone: "ok" },
+              { label: "Driver bonus", value: "120,000 F", status: "Validated", tone: "ok" },
+              { label: "Road fees", value: "25,000 F", status: "No receipt", tone: "warn" },
+            ],
+          },
+        },
+        {
+          title: "Collect and see the margin",
+          desc: "Cash margin and balance due appear instantly; the customer gets a WhatsApp reminder.",
+          panel: {
+            title: "Trip summary",
+            sub: "Douala → Garoua · LT 245 AB",
+            button: "",
+            rows: [
+              { label: "Collected", value: "1,300,000 F", status: "Received", tone: "ok" },
+              { label: "Validated costs", value: "788,000 F", status: "", tone: "" },
+              { label: "Pending costs", value: "25,000 F", status: "To review", tone: "warn" },
+              { label: "Customer balance", value: "500,000 F", status: "To collect", tone: "info" },
+            ],
+          },
+        },
+      ],
+    },
+    whatsapp: {
+      assistant: "GlevoTrace Assistant",
+      online: "online",
+      chat: [
+        { from: "driver", title: "Receipt photo", text: "Fuel 620,000 F, trip 0412" },
+        { from: "bot", title: "", text: "Expense added to the Douala → Garoua trip. Awaiting validation." },
+        { from: "driver", title: "", text: "Delivered in Garoua" },
+        { from: "bot", title: "", text: "Trip marked delivered. The owner and the customer have been notified." },
+      ],
+      badge: "Connected to WhatsApp",
+      title: "Your team keeps the tool it already uses.",
+      points: [
+        { strong: "Drivers:", text: " a photo and an amount, and the expense lands on the right trip." },
+        { strong: "Customers:", text: " automatic payment reminders, with the up-to-date balance." },
+        { strong: "Owner:", text: " delivery, missing receipt, payment received: the alert at the right time." },
+      ],
+      rolesTitle: "One ledger, four roles",
+      roles: [
+        { role: "Driver", action: "Sends receipts" },
+        { role: "Operations", action: "Validates expenses" },
+        { role: "Treasury", action: "Tracks payments" },
+        { role: "Owner", action: "Sees the margin" },
+      ],
+    },
+    pilot: {
+      badge: "Pilot offer",
+      title: "Start with a guided 30-day pilot.",
+      stats: [
+        { value: "30", label: "days" },
+        { value: "1–3", label: "trucks" },
+        { value: "1", label: "full cycle" },
+      ],
+      included:
+        "Setup, training and support included. Price or free period agreed in writing before the start.",
+      contactTitle: "Contact",
+      phoneLabel: "Phone / WhatsApp:",
+      emailLabel: "Email:",
+      location: "GlevoSys · Yaoundé, Cameroon",
+      formTitle: "Tell us about your last trip",
+      formSubtitle:
+        "We'll show you what GlevoTrace would have changed, then define your pilot together.",
+      form: {
+        name: "Name",
+        company: "Company",
+        whatsapp: "WhatsApp number",
+        whatsappPlaceholder: "+237 ...",
+        trucks: "Number of trucks",
+        lastTrip: "Your last trip",
+        lastTripPlaceholder: "Route, agreed price, advance, main expenses...",
+        submit: "Schedule a pilot",
+        subject: "GlevoTrace pilot request",
+      },
+    },
+    footer: {
+      productOf: "GlevoTrace is a product of",
+      backHome: "Back to GlevoSys",
+    },
   },
   careers: {
     badge: "Careers",
