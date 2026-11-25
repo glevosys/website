@@ -223,7 +223,6 @@ const fr = {
       primaryTitle: "Présentation de GlevoTrace",
       additionalLabel: "Voir démo du produit",
       additionalTitle: "Démonstration complémentaire de GlevoTrace",
-      watchOnYouTube: "Regarder sur YouTube",
     },
     problem: {
       badge: "Le problème",

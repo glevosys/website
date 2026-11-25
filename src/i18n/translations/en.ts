@@ -218,7 +218,6 @@ const en = {
       primaryTitle: "GlevoTrace introduction",
       additionalLabel: "Watch product demo",
       additionalTitle: "Additional GlevoTrace demonstration",
-      watchOnYouTube: "Watch on YouTube",
     },
     problem: {
       badge: "The problem",

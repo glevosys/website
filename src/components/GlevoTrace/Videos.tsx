@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiChevronDown, FiExternalLink } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageContext";
 
 const introductionId = "DEv4vaXRtjE";
@@ -8,35 +8,21 @@ const additionalDemoId = "MU75VA6h8ZE";
 const YouTubeVideo = ({
   id,
   title,
-  linkLabel,
 }: {
   id: string;
   title: string;
-  linkLabel: string;
 }) => (
-  <>
-    <div className="aspect-video overflow-hidden rounded-2xl bg-[#070B1F]">
-      <iframe
-        src={`https://www.youtube-nocookie.com/embed/${id}`}
-        title={title}
-        className="h-full w-full"
-        loading="lazy"
-        referrerPolicy="strict-origin-when-cross-origin"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      />
-    </div>
-    <a
-      href={`https://www.youtube.com/watch?v=${id}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label={`${linkLabel} : ${title}`}
-      className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[#0015CC] hover:underline"
-    >
-      {linkLabel}
-      <FiExternalLink aria-hidden="true" />
-    </a>
-  </>
+  <div className="aspect-video overflow-hidden rounded-2xl bg-[#070B1F]">
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${id}`}
+      title={title}
+      className="h-full w-full"
+      loading="lazy"
+      referrerPolicy="strict-origin-when-cross-origin"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowFullScreen
+    />
+  </div>
 );
 
 const Videos = () => {
@@ -57,7 +43,6 @@ const Videos = () => {
           <YouTubeVideo
             id={introductionId}
             title={video.primaryTitle}
-            linkLabel={video.watchOnYouTube}
           />
           <details
             className="group mt-5 rounded-xl border border-[#E6E8F0] bg-white"
@@ -72,7 +57,6 @@ const Videos = () => {
                 <YouTubeVideo
                   id={additionalDemoId}
                   title={video.additionalTitle}
-                  linkLabel={video.watchOnYouTube}
                 />
               </div>
             )}
