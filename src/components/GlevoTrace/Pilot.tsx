@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { useLanguage } from "../../i18n/LanguageContext";
 import { Eyebrow } from "../Reveal";
 
@@ -75,7 +76,10 @@ const Pilot = () => {
               <input name="societe" required className={fieldClass} />
             </label>
             <label>
-              <span className={labelClass}>{f.whatsapp}</span>
+              <span className={labelClass}>
+                <FaWhatsapp className="mr-1.5 inline-block h-4 w-4 align-[-2px] text-[#075E54]" aria-hidden="true" />
+                {f.whatsapp}
+              </span>
               <input name="whatsapp" type="tel" required placeholder={f.whatsappPlaceholder} className={fieldClass} />
             </label>
             <label>

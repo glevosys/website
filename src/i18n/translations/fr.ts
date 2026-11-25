@@ -219,6 +219,16 @@ const fr = {
       "Aucune limite de camions",
       "Équipe formée par GlevoSys",
     ],
+    videos: {
+      title: "Découvrez GlevoTrace en vidéo",
+      description:
+        "Découvrez comment GlevoTrace vous aide à suivre vos voyages, vos dépenses et vos paiements.",
+      primaryTitle: "Présentation de GlevoTrace",
+      additionalLabel: "Voir une autre démonstration",
+      additionalTitle: "Démonstration complémentaire de GlevoTrace",
+      watchOnYouTube: "Regarder sur YouTube",
+      interactiveLink: "Découvrir la démo interactive",
+    },
     problem: {
       badge: "Le problème",
       title: "Vos camions roulent. Et votre trésorerie ?",

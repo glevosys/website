@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 import { FiMenu, FiX } from "react-icons/fi";
 import images from "../../assets/pictures";
 import { useLanguage } from "../../i18n/LanguageContext";
@@ -12,7 +13,7 @@ const TraceHeader = () => {
 
   const links = [
     { href: "#probleme", label: g.nav.problem },
-    { href: "#demo", label: g.nav.how },
+    { href: "#presentation", label: g.nav.how },
     { href: "#whatsapp", label: g.nav.whatsapp },
     { href: "#pilote", label: g.nav.pilot },
   ];
@@ -32,18 +33,21 @@ const TraceHeader = () => {
             <img src={images.logo} alt="GlevoSys" className="h-5 w-auto" />
           </Link>
         </div>
-        <nav className="hidden lg:flex items-center gap-7" aria-label="GlevoTrace">
+        <nav className="hidden xl:flex items-center gap-7" aria-label="GlevoTrace">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="text-[15px] font-medium text-[#2B3045] hover:text-[#0015CC]"
+              className="inline-flex items-center gap-1.5 text-[15px] font-medium text-[#2B3045] hover:text-[#0015CC]"
             >
+              {l.href === "#whatsapp" && (
+                <FaWhatsapp className="h-4 w-4 shrink-0 text-[#075E54]" aria-hidden="true" />
+              )}
               {l.label}
             </a>
           ))}
         </nav>
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden xl:flex items-center gap-4">
           <LanguageToggle />
           <a
             href="#pilote"
@@ -54,7 +58,7 @@ const TraceHeader = () => {
         </div>
         <button
           type="button"
-          className="lg:hidden text-3xl text-[#0B1020]"
+          className="xl:hidden text-3xl text-[#0B1020]"
           aria-label="Menu"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
@@ -63,14 +67,17 @@ const TraceHeader = () => {
         </button>
       </div>
       {open && (
-        <div className="lg:hidden border-t border-[#E9EBF3] bg-white px-6 py-6 space-y-4">
+        <div className="xl:hidden border-t border-[#E9EBF3] bg-white px-6 py-6 space-y-4">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="block text-lg font-semibold text-[#0B1020]"
+              className="flex items-center gap-2 text-lg font-semibold text-[#0B1020]"
             >
+              {l.href === "#whatsapp" && (
+                <FaWhatsapp className="h-5 w-5 shrink-0 text-[#075E54]" aria-hidden="true" />
+              )}
               {l.label}
             </a>
           ))}

@@ -1,3 +1,4 @@
+import { FaWhatsapp } from "react-icons/fa";
 import { FiCheck } from "react-icons/fi";
 import { useLanguage } from "../../i18n/LanguageContext";
 import Reveal, { Eyebrow } from "../Reveal";
@@ -93,6 +94,7 @@ export const WhatsApp = () => {
                 <span className="block font-semibold text-sm">{w.assistant}</span>
                 <span className="block text-xs text-white/75">{w.online}</span>
               </span>
+              <FaWhatsapp className="ml-auto h-6 w-6 shrink-0 text-white" aria-hidden="true" />
             </div>
             <div className="bg-[#ECE5DD] p-4 space-y-3">
               {w.chat.map((m, i) => (
@@ -114,7 +116,10 @@ export const WhatsApp = () => {
           </div>
         </Reveal>
         <Reveal delay={0.1} className="order-1 lg:order-2">
-          <Eyebrow>{w.badge}</Eyebrow>
+          <Eyebrow>
+            <FaWhatsapp className="mr-2 inline-block h-5 w-5 align-[-4px] text-[#075E54]" aria-hidden="true" />
+            {w.badge}
+          </Eyebrow>
           <h2 className="text-3xl md:text-[40px] leading-tight font-bold text-[#0B1020] tracking-tight">
             {w.title}
           </h2>

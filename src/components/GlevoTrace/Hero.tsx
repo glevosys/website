@@ -42,7 +42,7 @@ const Hero = () => {
               <FiArrowRight />
             </a>
             <a
-              href="#demo"
+              href="#presentation"
               className="inline-flex items-center justify-center rounded-xl border border-white/40 hover:border-white px-6 py-3.5 font-semibold transition-colors"
             >
               {h.ctaSecondary}

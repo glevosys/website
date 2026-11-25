@@ -214,6 +214,16 @@ const en = {
       "No truck limit",
       "Team trained by GlevoSys",
     ],
+    videos: {
+      title: "Discover GlevoTrace in a short video",
+      description:
+        "See how GlevoTrace helps you follow your trips, expenses and payments.",
+      primaryTitle: "GlevoTrace introduction",
+      additionalLabel: "Watch another demonstration",
+      additionalTitle: "Additional GlevoTrace demonstration",
+      watchOnYouTube: "Watch on YouTube",
+      interactiveLink: "Explore the interactive demo",
+    },
     problem: {
       badge: "The problem",
       title: "Your trucks are moving. What about your cash?",

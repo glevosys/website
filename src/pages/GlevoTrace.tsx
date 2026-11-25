@@ -5,6 +5,7 @@ import Pilot from "../components/GlevoTrace/Pilot";
 import { Problem, Promises, Strengths, WhatsApp } from "../components/GlevoTrace/Sections";
 import TraceFooter from "../components/GlevoTrace/TraceFooter";
 import TraceHeader from "../components/GlevoTrace/TraceHeader";
+import Videos from "../components/GlevoTrace/Videos";
 import { useLanguage } from "../i18n/LanguageContext";
 
 const GlevoTrace = () => {
@@ -28,6 +29,7 @@ const GlevoTrace = () => {
       <main>
         <Hero />
         <Strengths />
+        <Videos />
         <Problem />
         <Promises />
         <Demo />
